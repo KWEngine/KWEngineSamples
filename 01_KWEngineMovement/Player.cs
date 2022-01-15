@@ -22,15 +22,6 @@ namespace _01_KWEngineMovement
             // Set the movement speed to 0.1f:
             float moveSpeed = 0.1f * KWEngine.DeltaTimeFactor;
 
-            // Get the current mouse cursor position in 3d:
-            Vector3 mousePosition = GetMouseIntersectionPoint(ms);
-
-            // TurnTowardsXY means:
-            // Turn towards the given position but only use the xy
-            // axes and do not face towards or away from the
-            // camera because the camera is on the z-axis.
-            TurnTowardsXY(mousePosition);   
-
             // Call the responsible method to simulate movement:
             if(currentWorld.IsModeAxisAligned())
             {
@@ -52,6 +43,8 @@ namespace _01_KWEngineMovement
         // Move on fixed world axes (x and y in this case):
         private void DoMovementAxisAligned(KeyboardState ks, MouseState ms, float moveSpeed)
         {
+
+            // Move left/right along the world's x-axis:
             if (ks.IsKeyDown(Key.Left) || ks.IsKeyDown(Key.A))
             {
                 MoveOffset(-moveSpeed, 0.0f, 0.0f);
@@ -60,6 +53,8 @@ namespace _01_KWEngineMovement
             {
                 MoveOffset(moveSpeed, 0.0f, 0.0f);
             }
+
+            // Move up/down along the world's y-axis:
             if (ks.IsKeyDown(Key.Up) || ks.IsKeyDown(Key.W))
             {
                 MoveOffset(0.0f, moveSpeed, 0.0f);
@@ -67,6 +62,16 @@ namespace _01_KWEngineMovement
             if (ks.IsKeyDown(Key.Down) || ks.IsKeyDown(Key.S))
             {
                 MoveOffset(0.0f, -moveSpeed, 0.0f);
+            }
+
+            // Rotate:
+            if (ks.IsKeyDown(Key.Delete) || ks.IsKeyDown(Key.Q))
+            {
+                AddRotationZ(moveSpeed * 4, true); // Rotate around the camera axis (z in this case)
+            }
+            if (ks.IsKeyDown(Key.PageDown) || ks.IsKeyDown(Key.E))
+            {
+                AddRotationZ(-moveSpeed * 4, true); // Rotate around the camera axis (z in this case)
             }
         }
 
@@ -97,6 +102,16 @@ namespace _01_KWEngineMovement
             if (ks.IsKeyDown(Key.Down) || ks.IsKeyDown(Key.S))
             {
                 Move(-moveSpeed);
+            }
+
+            // Rotate:
+            if (ks.IsKeyDown(Key.Delete) || ks.IsKeyDown(Key.Q))
+            {
+                AddRotationZ(moveSpeed * 4, true); // Rotate around the camera axis (z in this case)
+            }
+            if (ks.IsKeyDown(Key.PageDown) || ks.IsKeyDown(Key.E))
+            {
+                AddRotationZ(-moveSpeed * 4, true); // Rotate around the camera axis (z in this case)
             }
         }
     }

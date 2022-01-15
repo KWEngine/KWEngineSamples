@@ -77,6 +77,8 @@ namespace _01_KWEngineMovement
             hHint1.SetText("Switch modes with SPACE");
             AddHUDObject(hHint1);
 
+            // Show current view directions of objects:
+            DebugShowLookAtVectors = true;
         }
     }
 }
