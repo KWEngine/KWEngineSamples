@@ -1,0 +1,2826 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KWEngine2</name>
+    </assembly>
+    <members>
+        <member name="T:KWEngine2.Audio.CachedSound">
+            <summary>
+            Vorgeladener Audioton
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Audio.CachedSound.AudioData">
+            <summary>
+            Audiodaten
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Audio.CachedSound.WaveFormat">
+            <summary>
+            Waveformat
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Audio.CachedSound.#ctor(System.String)">
+            <summary>
+            Konstruktor für das Erzeugen eines gecacheten Tons
+            </summary>
+            <param name="audioFileName">Dateiname</param>
+        </member>
+        <member name="T:KWEngine2.Audio.CSOgg.csBuffer">
+            <summary>
+            Summary description for csBuffer.
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Audio.CSOgg.Packet">
+            <summary>
+            Summary description for Packet.
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Audio.CSOgg.Page">
+            <summary>
+            Summary description for Page.
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Audio.CSOgg.StreamState">
+            <summary>
+            Summary description for StreamState.
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Audio.CSOgg.SyncState">
+            <summary>
+            Summary description for SyncState.
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Audio.CSVorbis.Block.pcm">
+            necessary stream state for linking to the framing abstraction
+        </member>
+        <member name="T:KWEngine2.Audio.GLAudioEngine">
+            <summary>
+            Standard audio engine for simple sound effects
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Audio.GLAudioEngine.Dispose">
+            <summary>
+            Entlädt alle Audioressourcen aus dem Arbeitsspeicher
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Audio.OggDecoder.OggDecodeStream.BitsPerSample">
+            <summary>
+            Anzahl der Bits pro Sample
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Audio.OggDecoder.OggDecodeStream.SampleRate">
+            <summary>
+            Anzahl der Samples Pro Sekunde
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Audio.OggDecoder.OggDecodeStream.ChannelCount">
+            <summary>
+            Anzahl der Kanäle
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Audio.WaveFormat.SampleRate">
+            <summary>
+            Sample Rate
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Audio.WaveFormat.BitsPerSample">
+            <summary>
+            Bits per Sample
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Audio.WaveFormat.Channels">
+            <summary>
+            Mono or Stereo
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Audio.WaveFormat.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a WaveFormat for given Parameters
+            </summary>
+            <param name="samplerate">Sample rate (i.e. 44100)</param>
+            <param name="bitspersample">Bits per sample (i.e. 16)</param>
+            <param name="channels">Channel count (i.e. 1 or 2)</param>
+        </member>
+        <member name="T:KWEngine2.Collision.Hitbox">
+            <summary>
+            Beschreibung der Hitbox für eine GameObject-Instanz
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.Hitbox.DiameterAveraged">
+            <summary>
+            (geschätzter) Durchmesser der Hitbox
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.Hitbox.DiameterFull">
+            <summary>
+            (maximaler) Durchmesser der Hitbox
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.Hitbox.IsActive">
+            <summary>
+            Gibt an, ob die Hitbox aktiv für die Kollisionsberechnungen verwendet wird
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Collision.Hitbox.GetDimensions">
+            <summary>
+            Gibt die Breite, Höhe und Tiefe der Hitbox an
+            </summary>
+            <returns>Breite, Höhe, Tiefe als Vector3-Instanz</returns>
+        </member>
+        <member name="M:KWEngine2.Collision.Hitbox.GetCenter">
+            <summary>
+            Gibt die Mitte der Hitbox an
+            </summary>
+            <returns>Hitbox-Mittelpunkt</returns>
+        </member>
+        <member name="T:KWEngine2.Collision.Intersection">
+            <summary>
+            Kollisionsklasse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.Intersection.Object">
+            <summary>
+            Das Objekt, mit dem kollidiert wurde
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.Intersection.MeshName">
+            <summary>
+            Der Name der Hitbox, mit der kollidiert wurde
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.Intersection.MTV">
+            <summary>
+            Minimal-Translation-Vector (für Kollisionskorrektur)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.Intersection.MTVUp">
+            <summary>
+            Minimal-Translation-Vector für die Y-Achse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.Intersection.ColliderSurfaceNormal">
+            <summary>
+            Gibt den Ebenenvektor der Oberfläche des Objekts an, mit dem die Kollision stattfand
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Collision.Intersection.#ctor(KWEngine2.GameObjects.GameObject,KWEngine2.Collision.Hitbox,KWEngine2.Collision.Hitbox,OpenTK.Vector3,OpenTK.Vector3,System.String,OpenTK.Vector3)">
+            <summary>
+            Konstruktormethode
+            </summary>
+            <param name="collider">Kollisionsobjekt</param>
+            <param name="hbCaller">Hitbox-Instanz des abfragenden Objekts</param>
+            <param name="hbCollider">Hitbox-Instanz des Kollisionsobjekts</param>
+            <param name="mtv">Korrektur-MTV</param>
+            <param name="mtvUp">Korrektur-MTV (Y-Achse)</param>
+            <param name="mName">Mesh-Name</param>
+            <param name="surfaceNormal">Ebenenvektor der Kollisionsoberfläche</param>
+        </member>
+        <member name="P:KWEngine2.Collision.Intersection.IsTerrain">
+            <summary>
+            Gibt an, ob die Kollisionsinstanz ein Terrain-Modell repräsentiert
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Collision.Intersection.CalculateVolume">
+            <summary>
+            Berechnet das Volumen der Kollision (wie viel von Objekt B schneidet sich mit Objekt A?)
+            </summary>
+            <returns>IntersectionVolume-Instanz mit genaueren Angaben zum Volumen</returns>
+        </member>
+        <member name="T:KWEngine2.Collision.IntersectionVolume">
+            <summary>
+            Enthält erweiterte Informationen zum Kollisionsvolumen
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.IntersectionVolume.Center">
+            <summary>
+            Gibt den Mittelpunkt des Kollisionsvolumens an
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.IntersectionVolume.SpanX">
+            <summary>
+            Gibt die Breite des Kollisionsvolumens entlang der X-Achse an
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.IntersectionVolume.SpanY">
+            <summary>
+            Gibt die Höhe des Kollisionsvolumens entlang der Y-Achse an
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.IntersectionVolume.SpanZ">
+            <summary>
+            Gibt die Tiefe des Kollisionsvolumens entlang der Z-Achse an
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.IntersectionVolume.DirectionFromHitboxCenter">
+            <summary>
+            Gibt die relative Richtung ausgehend von der Hitbox-Mitte hin zum Kollisionsvolumen an
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.IntersectionVolume.DistanceFromHitboxCenter">
+            <summary>
+            Gibt die Distanz des Kollisionsvolumens zur Hitbox-Mitte an
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.IntersectionVolume.VolumeVertices">
+            <summary>
+            Die Eckpunkte des Kollisionsvolumens
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Collision.IntersectionVolume.IsValid">
+            <summary>
+            Gibt an, ob die Messungen valide sind (nur dann sollten die Messdaten verwendet werden!)
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Collision.IntersectionVolume.#ctor(System.Collections.Generic.List{OpenTK.Vector3},OpenTK.Vector3)">
+            <summary>
+            Konstruktormethode für das Volumen einer Kollision
+            </summary>
+            <param name="vertices">Liste der Schnittpunkte</param>
+            <param name="hitboxCenter">Zentraler Punkt der Hitbox des Aufrufers</param>
+        </member>
+        <member name="T:KWEngine2.GameObjects.ExplosionAnimation">
+            <summary>
+            Art der Animationsbewegung
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionAnimation.Spread">
+            <summary>
+            Standard-Animationsalgorithmus
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionAnimation.WindUp">
+            <summary>
+            Partikel wandern entlang der positiven y-Achse nach oben
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionAnimation.WhirlwindUp">
+            <summary>
+            Partikel wirbeln entlang der positiven y-Achse nach oben
+            </summary>
+        </member>
+        <member name="T:KWEngine2.GameObjects.ExplosionType">
+            <summary>
+            Art der Explosion
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.Cube">
+            <summary>
+            Würfelpartikel in alle Richtungen
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.CubeRingY">
+            <summary>
+            Würfelpartikel um die Y-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.CubeRingZ">
+            <summary>
+            Würfelpartikel um die Z-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.Sphere">
+            <summary>
+            Kugelpartikel in alle Richtungen
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.SphereRingY">
+            <summary>
+            Kugelpartikel um die Y-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.SphereRingZ">
+            <summary>
+            Kugelpartikel um die Z-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.Star">
+            <summary>
+            Sternenpartikel in alle Richtungen
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.StarRingY">
+            <summary>
+            Sternenpartikel um die Y-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.StarRingZ">
+            <summary>
+            Sternenpartikel um die Z-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.Heart">
+            <summary>
+            Herzpartikel in alle Richtungen
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.HeartRingY">
+            <summary>
+            Herzpartikel um die Y-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.HeartRingZ">
+            <summary>
+            Herzpartikel um die Z-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.Skull">
+            <summary>
+            Schädelpartikel in alle Richtungen
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.SkullRingY">
+            <summary>
+            Schädelpartikel um die Y-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.SkullRingZ">
+            <summary>
+            Schädelpartikel um die Z-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.Dollar">
+            <summary>
+            Dollarpartikel in alle Richtungen
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.DollarRingY">
+            <summary>
+            Dollarpartikel um die Y-Achse
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ExplosionType.DollarRingZ">
+            <summary>
+            Dollarpartikel um die Z-Achse
+            </summary>
+        </member>
+        <member name="T:KWEngine2.GameObjects.Explosion">
+            <summary>
+            Explosionsklasse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.Explosion.Position">
+            <summary>
+            Position der Explosion
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.Explosion.Glow">
+            <summary>
+            Glühfarbe der Explosion
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.Explosion.Color">
+            <summary>
+            Farbe der Explosionsteilchen (ohne Glühfarbe)
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.Explosion.SetColor(System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Färbung der Explosionspartikel
+            </summary>
+            <param name="red">Rot</param>
+            <param name="green">Grün</param>
+            <param name="blue">Blau</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.Explosion.SetGlow(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Glühfarbe der Explosionspartikel
+            </summary>
+            <param name="red">Rot</param>
+            <param name="green">Grün</param>
+            <param name="blue">Blau</param>
+            <param name="intensity">Helligkeit</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.Explosion.SetPosition(System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Position des Objekts
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <param name="z">z</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.Explosion.SetRadius(System.Single)">
+            <summary>
+            Setzt den Explosionsradius
+            </summary>
+            <param name="radius">Radius</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.Explosion.SetParticleSize(System.Single)">
+            <summary>
+            Setzt die Partikelgröße
+            </summary>
+            <param name="size">Größe je Partikel</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.Explosion.SetAnimationAlgorithm(KWEngine2.GameObjects.ExplosionAnimation)">
+            <summary>
+            Setzt den Bewegungsalgorithmus der Partikel
+            </summary>
+            <param name="e">Algorithmustyp</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.Explosion.#ctor(OpenTK.Vector3,System.Int32,System.Single,KWEngine2.GameObjects.ExplosionType)">
+            <summary>
+            Explosionskonstruktormethode
+            </summary>
+            <param name="position">Position der Explosion</param>
+            <param name="particleCount">Anzahl der Partikel</param>
+            <param name="durationInSeconds">Dauer der Explosion in Sekunden</param>
+            <param name="type">Art der Explosion</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.Explosion.#ctor(OpenTK.Vector3,KWEngine2.GameObjects.ExplosionType)">
+            <summary>
+            Explosionskonstruktormethode
+            </summary>
+            <param name="position">Position der Explosion</param>
+            <param name="type">Art der Explosion</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.Explosion.#ctor(OpenTK.Vector3,System.Int32,System.Single,System.Single,System.Single,KWEngine2.GameObjects.ExplosionType,OpenTK.Vector4,System.String)">
+            <summary>
+            Explosionskonstruktormethode
+            </summary>
+            <param name="position">Position der Explosion</param>
+            <param name="particleCount">Anzahl der Partikel</param>
+            <param name="particleSize">Größe der Partikel</param>
+            <param name="radius">Radius der Explosion</param>
+            <param name="durationInSeconds">Dauer der Explosion in Sekunden</param>
+            <param name="type">Art der Explosion</param>
+            <param name="glow">Glühfarbe der Explosion</param>
+            <param name="texture">Textur der Explosion (optional)</param>
+        </member>
+        <member name="T:KWEngine2.GameObjects.HUDObjectType">
+            <summary>
+            Art des HUD-Objekts
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.HUDObjectType.Image">
+            <summary>
+            Bild
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.HUDObjectType.Text">
+            <summary>
+            Text
+            </summary>
+        </member>
+        <member name="T:KWEngine2.GameObjects.HUDObject">
+            <summary>
+            HUD-Klasse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.HUDObject.IsVisible">
+            <summary>
+            Gibt an, ob das HUDObject sichtbar ist oder nicht (Standard: true)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.HUDObject.Position">
+            <summary>
+            Position
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.HUDObject.CurrentWorld">
+            <summary>
+            Aktuelle Welt
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.HUDObject.Name">
+            <summary>
+            Name der Instanz
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.HUDObject.Font">
+            <summary>
+            Schriftart des HUD-Objekts
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.HUDObject.CharacterSpreadFactor">
+            <summary>
+            Laufweite der Buchstaben (Standard: 26)
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.HUDObject.SetRotation(System.Single,System.Single)">
+            <summary>
+            Setzt die Rotation des HUD-Objekts
+            </summary>
+            <param name="x">X-Rotation in Grad</param>
+            <param name="y">Y-Rotation in Grad</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.HUDObject.SetColor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Färbung des Objekts
+            </summary>
+            <param name="red">Rot</param>
+            <param name="green">Grün</param>
+            <param name="blue">Blau</param>
+            <param name="intensity">Helligkeit</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.HUDObject.SetGlow(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Glow-Effekt des Objekts
+            </summary>
+            <param name="red">Rot</param>
+            <param name="green">Grün</param>
+            <param name="blue">Blau</param>
+            <param name="intensity">Intensität</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.HUDObject.SetScale(System.Single,System.Single)">
+            <summary>
+            Setzt die Größe
+            </summary>
+            <param name="width">Breite</param>
+            <param name="height">Höhe</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.HUDObject.SetText(System.String)">
+            <summary>
+            Setzt den Text
+            </summary>
+            <param name="text">Text</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.HUDObject.SetTexture(System.String,System.Boolean)">
+            <summary>
+            Setzt die Textur
+            </summary>
+            <param name="filename">Bilddatei</param>
+            <param name="isFile">false, wenn die Datei Teil der EXE ist (Eingebettete Ressource)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.HUDObject.#ctor(KWEngine2.GameObjects.HUDObjectType,System.Single,System.Single)">
+            <summary>
+            Konstruktormethode
+            </summary>
+            <param name="type">Art des Objekts </param>
+            <param name="x">Breitenposition</param>
+            <param name="y">Höhenposition</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.HUDObject.SetPosition(System.Single,System.Single)">
+            <summary>
+            Setzt die Position
+            </summary>
+            <param name="x">Breite in Pixeln</param>
+            <param name="y">Höhe in Pixeln</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.HUDObject.IsMouseCursorOnMe(OpenTK.Input.MouseState,System.Int32,System.Int32)">
+            <summary>
+            Prüft, ob der Mauszeiger auf dem HUD-Objekt ist
+            </summary>
+            <param name="ms">Mausinfo</param>
+            <param name="offsetX">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="offsetY">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <returns>true, wenn die Maus auf dem HUD-Objekt ist</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.HUDObject.SetFont(KWEngine2.FontFace)">
+            <summary>
+            Setzt die Schriftart der Instanz
+            </summary>
+            <param name="fontFace">zu nutzende Schriftart</param>
+        </member>
+        <member name="T:KWEngine2.GameObjects.LightType">
+            <summary>
+            Lichttyp
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.LightType.Point">
+            <summary>
+            Punktlicht
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.LightType.Directional">
+            <summary>
+            Gerichtetes Licht
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.LightType.Sun">
+            <summary>
+            Gerichtetes Licht mit unbegrenzter Reichweite
+            </summary>
+        </member>
+        <member name="T:KWEngine2.GameObjects.LightObject">
+            <summary>
+            Lichtklasse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.LightObject.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.LightObject.IsShadowCaster">
+            <summary>
+            Gibt an, ob das Licht Schatten wirft (maximal 3x pro Welt erlaubt)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.LightObject.Type">
+            <summary>
+            Art des Lichts
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.LightObject.Color">
+            <summary>
+            Erfragt die aktuelle Lichtfärbung
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.LightObject.CurrentWorld">
+            <summary>
+            Aktuelle Welt
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.LightObject.Position">
+            <summary>
+            Position des Lichts
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.LightObject.Target">
+            <summary>
+            Ziel des Lichts
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.#ctor">
+            <summary>
+            Konstruktormethode
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.#ctor(KWEngine2.GameObjects.LightType,System.Boolean)">
+            <summary>
+            Erstellt ein Lichtinstanz des angegebenen Typs
+            </summary>
+            <param name="type">Art des Lichts</param>
+            <param name="isShadowCaster">Wirft das Licht Schatten?</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.SetNearAndFarBounds(System.Single,System.Single)">
+            <summary>
+            Ändert die Nah- und Ferngrenze des Lichts
+            </summary>
+            <param name="zNear">Nahgrenze (Standard: 1 (für Sonnen 10), muss größer als 0 und kleiner als die Ferngrenze sein)</param>
+            <param name="zFar">Ferngrenze [Bereich: 1.5 bis 10000 (Standard: 10, für Sonnen 1000)]</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.SetColor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Lichtfarbe
+            </summary>
+            <param name="red">Rot</param>
+            <param name="green">Grün</param>
+            <param name="blue">Blau</param>
+            <param name="intensity">Helligkeit (0 bis 1024, Standard: 1)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.SetPosition(System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Position des Lichts
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <param name="z">z</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.SetPosition(OpenTK.Vector3)">
+            <summary>
+            Setzt die Position des Lichts
+            </summary>
+            <param name="position">Positionsdaten</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.SetTarget(System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt das Ziel des gerichteten Lichts
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <param name="z">z</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.SetTarget(OpenTK.Vector3)">
+            <summary>
+            Setzt das Ziel des gerichteten Lichts
+            </summary>
+            <param name="target">Zielkoordinaten</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.SetFOV(System.Single)">
+            <summary>
+            Setzt das Field of View (in Grad) für das schattenwerfende Licht
+            </summary>
+            <param name="fov">Blickfeld nach links und rechts in Grad (Minimum: 10, Maximum: 180)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.SetFOVBiasCoefficient(System.Single,System.Single)">
+            <summary>
+            Setzt den Koeffizienten für die Berechnung der Schattenposition der LightObject-Instanz
+            </summary>
+            <param name="bias">Biaswert (Standard: 0.00005 für gerichtete Lichter; Bereich: -1 bis 1)</param>
+            <param name="hardness">Steuert die Schattenhärte. Je kleiner der Wert, desto härter der Schattenverlauf (Standard: 0.98f; Bereich: 0.01f bis 2f)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.LightObject.CompareTo(System.Object)">
+            <summary>
+            Vergleicht zwei Lichter miteinander
+            </summary>
+            <param name="obj">Zu vergleichendes Licht</param>
+            <returns>1, -1</returns>
+        </member>
+        <member name="T:KWEngine2.GameObjects.ParticleType">
+            <summary>
+            Art der Partikel
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstFire1">
+            <summary>
+            Feuer 1
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstFire2">
+            <summary>
+            Feuer 2
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstFire3">
+            <summary>
+            Feuer 3
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstElectricity">
+            <summary>
+            Elektroschock
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstBubblesColored">
+            <summary>
+            Bälle
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstBubblesMonochrome">
+            <summary>
+            Bälle (farblos)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstFirework1">
+            <summary>
+            Feuerwerk 1
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstFirework2">
+            <summary>
+            Feuerwerk 2
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstHearts">
+            <summary>
+            Herzen
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstOneUps">
+            <summary>
+            Pluszeichen
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstShield">
+            <summary>
+            Schild
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstTeleport1">
+            <summary>
+            Teleport 1
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstTeleport2">
+            <summary>
+            Teleport 2
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.BurstTeleport3">
+            <summary>
+            Teleport 3
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.LoopSmoke1">
+            <summary>
+            Rauch 1 (Loop)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.LoopSmoke2">
+            <summary>
+            Rauch 2 (Loop)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GameObjects.ParticleType.LoopSmoke3">
+            <summary>
+            Rauch 3 (Loop)
+            </summary>
+        </member>
+        <member name="T:KWEngine2.GameObjects.ParticleObject">
+            <summary>
+            Partikelklasse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.ParticleObject.Position">
+            <summary>
+            Position des Partikels
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.ParticleObject.SetDuration(System.Single)">
+            <summary>
+            Setzt die Dauer der Loop-Partikel
+            </summary>
+            <param name="durationInSeconds">Dauer (in Sekunden)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.ParticleObject.SetPosition(OpenTK.Vector3)">
+            <summary>
+            Setzt die Positon
+            </summary>
+            <param name="pos">Positionsdaten</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.ParticleObject.SetColor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Partikelfärbung
+            </summary>
+            <param name="red">Rot</param>
+            <param name="green">Grün</param>
+            <param name="blue">Blau</param>
+            <param name="intensity">Helligkeit</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.ParticleObject.#ctor(OpenTK.Vector3,OpenTK.Vector3,KWEngine2.GameObjects.ParticleType)">
+            <summary>
+            Konstruktormethode für Partikel
+            </summary>
+            <param name="position">Position</param>
+            <param name="scale">Größe in x-, y- und z-Richtung</param>
+            <param name="type">Art der Partikelanimation</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.ParticleObject.#ctor(System.Single,System.Single,System.Single,System.Single,KWEngine2.GameObjects.ParticleType)">
+            <summary>
+            Konstruktormethode für Partikel
+            </summary>
+            <param name="x">x-Position</param>
+            <param name="y">y-Position</param>
+            <param name="z">z-Position</param>
+            <param name="scale">Skalierung</param>
+            <param name="type">Art der Partikelanimation</param>
+        </member>
+        <member name="T:KWEngine2.GameObjects.GameObject">
+            <summary>
+            Spielobjekte-Klasse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.UpdateLast">
+            <summary>
+            Legt fest, ob das Objekt jeden Frame zuletzt aktualisiert wird (Standard: Nach Reihenfolge des Hinzufügens)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.IsShadowCaster">
+            <summary>
+            Gibt an, ob das Objekt Schatten wirft und empfängt
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.FPSEyeOffset">
+            <summary>
+            Höhenkorrektur für den First-Person-Modus (Standard: 0)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.IsAffectedByLight">
+            <summary>
+            Gibt an, ob das Objekt von anderen Lichtquellen betroffen ist
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.CurrentWorld">
+            <summary>
+            Aktuelle Spielwelt
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.CurrentWindow">
+            <summary>
+            Aktuelles Fenster
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.Opacity">
+            <summary>
+            Sichtbarkeit (0 = Unsichtbar, 1 = Sichtbar)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.Color">
+            <summary>
+            Färbung
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.ColorEmissive">
+            <summary>
+            Strahlfarbe (alle Werte zwischen 0 und 1)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.Glow">
+            <summary>
+            Glühfarbe (alle Werte zwischen 0 und 1)
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetGlow(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Glühfarbe (alle Parameter zwischen 0 und 1)
+            </summary>
+            <param name="red">Rot</param>
+            <param name="green">Grün</param>
+            <param name="blue">Blau</param>
+            <param name="intensity">Helligkeit</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetGlow(OpenTK.Vector4)">
+            <summary>
+            Setzt die Glühfarbe (alle Parameter zwischen 0 und 1)
+            </summary>
+            <param name="g">Glühvektor</param>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.ColorOutline">
+            <summary>
+            Umrandungsfarbe (nicht für KWCube)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.IsTerrain">
+            <summary>
+            Prüft, ob die Instanz ein Terrain-Modell repräsentiert
+            </summary>
+            <returns>true, wenn es sich um Terrain handelt</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetColorOutline(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Umrandungsfarbe
+            </summary>
+            <param name="red">Rot</param>
+            <param name="green">Grün</param>
+            <param name="blue">Blau</param>
+            <param name="intensity">Sichtbarkeit</param>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.IsPickable">
+            <summary>
+            Gibt an, ob das Objekt per Maus wählbar sein soll
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.AnimationID">
+            <summary>
+            ID der Animation
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.HasAnimations">
+            <summary>
+            Gibt an, ob das Objekt über Animationen verfügt
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.AnimationPercentage">
+            <summary>
+            Prozent der Animation (0 bis 1)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.IsCollisionObject">
+            <summary>
+            Gibt an ob mit dem Objekt kollidiert werde kann
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.Tag">
+            <summary>
+            Optionales Speicherfeld
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.Rotation">
+            <summary>
+            Rotation (als Quaternion)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.RotationFirstPersonObject">
+            <summary>
+            Gibt die Rotation des First-Person-Objekts zurück
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.Position">
+            <summary>
+            Position des Objekts
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetScale(System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Skalierung des Objekts
+            </summary>
+            <param name="x">X</param>
+            <param name="y">Y</param>
+            <param name="z">Z</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetScale(System.Single)">
+            <summary>
+            Setzt die Skalierung des Objekts
+            </summary>
+            <param name="scale"></param>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.Scale">
+            <summary>
+            Skalierung des Objekts
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.Name">
+            <summary>
+            Name des Objekts
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetCenterPointForAllHitboxes">
+            <summary>
+            Berechnet das Zentrum des Objekts (über alle Hitboxen)
+            </summary>
+            <returns>Zentrum</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetMaxDimensions">
+            <summary>
+            Erfragt die Maße des Objekts
+            </summary>
+            <returns>Maße (Breite, Höhe, Tiefe)</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetMaxDiameter">
+            <summary>
+            Erfragt den maximalen Durchmesser des Objekts
+            </summary>
+            <returns>Durchmesser</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.MoveFPSCamera(OpenTK.Input.MouseState)">
+            <summary>
+            Bewegt das Blickfeld des FP-Objekts gemäß der Mauszeigerposition
+            </summary>
+            <param name="ms">Mausinformation</param>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.HasModel">
+            <summary>
+            Gibt an, ob das Objekt ein Modell hat
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.Model">
+            <summary>
+            Gibt das aktuelle Modell zurück
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetModel(System.String)">
+            <summary>
+            Setzt das Modell des Objekts
+            </summary>
+            <param name="m">Modellname</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.Act(OpenTK.Input.KeyboardState,OpenTK.Input.MouseState)">
+            <summary>
+            Act-Methode
+            </summary>
+            <param name="ks">Keyboardinfos</param>
+            <param name="ms">Mausinfos</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetRotationEulerAngles">
+            <summary>
+            Erfragt die aktuelle Rotation in Eulerschen Winkeln
+            </summary>
+            <returns>Euler-Winkel</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetRotation(OpenTK.Quaternion)">
+            <summary>
+            Setzt die Rotation des Objekts
+            </summary>
+            <param name="rotation">Rotation (als Quaternion)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.IsLookingAt(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Prüft, ob das Objekt in Richtung des gegebenen Punkts blickt
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <param name="z">z</param>
+            <param name="diameter">Durchmesser um den Punkt</param>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.IsLookingAt(OpenTK.Vector3,System.Single)">
+            <summary>
+            Prüft, ob das Objekt in Richtung des gegebenen Punkts blickt
+            </summary>
+            <param name="target">Zielposition</param>
+            <param name="diameter">Durchmesser um das Ziel</param>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetRotation(System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Rotation des Objekts (Reihenfolge: Z->Y->X)
+            </summary>
+            <param name="x">X in Grad</param>
+            <param name="y">Y in Grad</param>
+            <param name="z">Z in Grad</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.AddRotation(OpenTK.Quaternion)">
+            <summary>
+            Addiert eine Rotation hinzu
+            </summary>
+            <param name="r">Rotation (als Quaternion)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.AddRotationX(System.Single,System.Boolean)">
+            <summary>
+            Fügt eine Rotation um die X-Achse hinzu
+            </summary>
+            <param name="amount">Rotation in Grad</param>
+            <param name="absolute">false für relative Drehung, true für eine Rotation um die Weltachse</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.AddRotationY(System.Single,System.Boolean)">
+            <summary>
+            Fügt eine Rotation um die Y-Achse hinzu
+            </summary>
+            <param name="amount">Rotation in Grad</param>
+            <param name="absolute">false für relative Drehung, true für eine Rotation um die Weltachse</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.AddRotationZ(System.Single,System.Boolean)">
+            <summary>
+            Fügt eine Rotation um die Z-Achse hinzu
+            </summary>
+            <param name="amount">Rotation in Grad</param>
+            <param name="absolute">false für relative Drehung, true für eine Rotation um die Weltachse</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetPositionX(System.Single)">
+            <summary>
+            Setzt die x-Position der Instanz auf den gegebenen Wert
+            </summary>
+            <param name="x">Positionswert</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetPositionY(System.Single)">
+            <summary>
+            Setzt die y-Position der Instanz auf den gegebenen Wert
+            </summary>
+            <param name="y">Positionswert</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetPositionZ(System.Single)">
+            <summary>
+            Setzt die z-Position der Instanz auf den gegebenen Wert
+            </summary>
+            <param name="z">Positionswert</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetPosition(System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Position des Objekts
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <param name="z">z</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetPosition(OpenTK.Vector3)">
+            <summary>
+            Setzt die Position des Objekts
+            </summary>
+            <param name="newPosition">neue Position</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetColor(System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Färbung des Objekts (alle Parameterwerte zwischen 0 und 1)
+            </summary>
+            <param name="red">Rot</param>
+            <param name="green">Grün</param>
+            <param name="blue">Blau</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetColorEmissive(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Strahlfarbe (alle Parameter zwischen 0 und 1)
+            </summary>
+            <param name="red">Rot</param>
+            <param name="green">Grün</param>
+            <param name="blue">Blau</param>
+            <param name="intensity">Intensität</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetLookAtVector">
+            <summary>
+            Erfragt den normalisierten Blickrichtungsvektor
+            </summary>
+            <returns>Blickrichtungsvektor (normalisiert)</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.Move(System.Single)">
+            <summary>
+            Bewegt das Objekt in Blickrichtung
+            </summary>
+            <param name="amount">Anzahl der Bewegungseinheiten</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.MoveXZ(System.Single)">
+            <summary>
+            Bewegt das Objekt in Blickrichtung (ohne Höhenunterschied)
+            </summary>
+            <param name="amount">Anzahl der Bewegungseinheiten</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.MoveOffset(System.Single,System.Single,System.Single)">
+            <summary>
+            Bewegt das Objekt relativ zur aktuellen Position entlang der gegebenen Achsen
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <param name="z">z</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.MoveOffset(OpenTK.Vector3)">
+            <summary>
+            Bewegt das Objekt relativ zur aktuellen Position entlang der gegebenen Achsen
+            </summary>
+            <param name="offset">Offset-Vektor</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.MoveAndStrafeFirstPersonXYZ(System.Single,System.Single,System.Single)">
+            <summary>
+            Führt Bewegungen für den First-Person-Modus aus
+            </summary>
+            <param name="forward">Vorwärtsanteil (-1 bis +1)</param>
+            <param name="strafe">Seitwärtsanteil (-1 bis +1)</param>
+            <param name="units">Einheitenmultiplikator (z.B. 0.5)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.MoveAlongVector(OpenTK.Vector3,System.Single)">
+            <summary>
+            Bewegt das Objekt um die gegebenen Einheiten entlang eines Vektors
+            </summary>
+            <param name="v">Richtungsvektor</param>
+            <param name="units">Bewegungseinheiten</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.MoveAndStrafeFirstPerson(System.Single,System.Single,System.Single)">
+            <summary>
+            Führt Bewegungen für den First-Person-Modus aus (ohne Höhenveränderung)
+            </summary>
+            <param name="forward">Vorwärtsanteil (-1 bis +1)</param>
+            <param name="strafe">Seitwärtsanteil (-1 bis +1)</param>
+            <param name="units">Einheitenmultiplikator (z.B. 0.5)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetCurrentTimeInMilliseconds">
+            <summary>
+            Aktuelle Systemzeit in Millisekunden
+            </summary>
+            <returns>Systemzeit in ms</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetIntersection(System.Single,System.Single,System.Single,System.Type[])">
+            <summary>
+            Ermittelt ein Objekt, das mit dem aufrufenden Objekt kollidiert
+            </summary>
+            <param name="offsetX">Versatz in X-Richtung</param>
+            <param name="offsetY">Versatz in Y-Richtung</param>
+            <param name="offsetZ">Versatz in Z-Richtung</param>
+            <param name="types">Liste der Klassennamen, auf die geprüft werden soll</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetIntersection(System.Single,System.Single,System.Single)">
+            <summary>
+            Ermittelt ein Objekt, das mit dem aufrufenden Objekt kollidiert
+            </summary>
+            <param name="offsetX">Versatz in X-Richtung (optional)</param>
+            <param name="offsetY">Versatz in Y-Richtung (optional)</param>
+            <param name="offsetZ">Versatz in Z-Richtung (optional)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetIntersections(System.Single,System.Single,System.Single,System.Type[])">
+            <summary>
+            Erfragt eine Liste aller Objekte, die mit dem aufrufenden Objekt kollidieren
+            </summary>
+            <param name="offsetX">Versatz in X-Richtung</param>
+            <param name="offsetY">Versatz in Y-Richtung</param>
+            <param name="offsetZ">Versatz in Z-Richtung</param>
+            <param name="types">Liste der Klassennamen, auf die geprüft werden soll</param>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetIntersections(System.Single,System.Single,System.Single)">
+            <summary>
+            Erfragt eine Liste aller Objekte, die mit dem aufrufenden Objekt kollidieren
+            </summary>
+            <param name="offsetX">Versatz in X-Richtung (optional)</param>
+            <param name="offsetY">Versatz in Y-Richtung (optional)</param>
+            <param name="offsetZ">Versatz in Z-Richtung (optional)</param>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.CompareTo(System.Object)">
+            <summary>
+            Vergleichsmethode für den Tiefenpuffer
+            </summary>
+            <param name="obj">zu vergleichendes Objekt</param>
+            <returns>1, wenn das zu vergleichende Objekt weiter weg von der Kamera ist als das aufrufende Objekt</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetRoughness(System.Single)">
+            <summary>
+            Setzt die Rauheit der Objektoberfläche
+            </summary>
+            <param name="r">Rauheitsfaktor (Werte zwischen 0 und 1 sind erlaubt)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetMetalness(System.Single)">
+            <summary>
+            Setzt die Metalligkeit der Objektoberfläche
+            </summary>
+            <param name="m">Metalligkeitsfaktor (Werte zwischen 0 und 1 sind erlaubt)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetTexture(System.String,KWEngine2.TextureType,KWEngine2.CubeSide)">
+            <summary>
+            Setzt die Textur für das Objekt (KWCube, KWSphere und Terrain)
+            </summary>
+            <param name="texture">Texturdatei</param>
+            <param name="type">Art der Textur (Standard: Diffuse)</param>
+            <param name="side">Seite des Würfels (für KWCube-Modelle)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetTexture(System.String,System.Int32,KWEngine2.TextureType)">
+            <summary>
+            Ändert die Albedo-Textur für das Objekt
+            </summary>
+            <param name="texture">Texturdatei</param>
+            <param name="meshIndex">ID des Meshs im Model</param>
+            <param name="type">Art der Textur</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetTextureRepeat(System.Single,System.Single,KWEngine2.CubeSide)">
+            <summary>
+            Setzt die Texturwiederholungen für das Objekt
+            </summary>
+            <param name="x">Breitenwiederholungen</param>
+            <param name="y">Höhenwiederholungen</param>
+            <param name="side">Seite des Würfels (für KWCube6)</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetMouseIntersectionPoint(OpenTK.Input.MouseState,KWEngine2.Plane,System.Int32,System.Int32)">
+            <summary>
+            Erfragt den Kollisionspunkt des Mauszeigers mit der 3D-Welt (auf Höhe des Aufrufers)
+            </summary>
+            <param name="ms">Mausinformationen</param>
+            <param name="plane">Kollisionsebene (Standard: Camera)</param>
+            <param name="offsetX">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="offsetY">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.IsMouseCursorInsideMyHitbox(OpenTK.Input.MouseState,System.Int32,System.Int32)">
+            <summary>
+            Erfragt, ob der Mauszeiger (näherungsweise) auf dem Objekt liegt 
+            </summary>
+            <param name="ms">Mausinformationen</param>
+            <param name="offsetX">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="offsetY">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <returns>true, wenn der Mauszeiger auf dem Objekt liegt</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetRotationToTarget(OpenTK.Vector3)">
+            <summary>
+            Erfragt die Rotation, die zu einem bestimmten Ziel notwendig wäre
+            </summary>
+            <param name="target">Ziel</param>
+            <returns>Rotation (als Quaternion)</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.TurnTowardsXYZ(OpenTK.Vector3)">
+            <summary>
+            Dreht das Objekt, so dass es zur Zielkoordinate blickt
+            </summary>
+            <param name="target">Zielkoordinate</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.AdjustRotationToCameraRotation">
+            <summary>
+            Gleicht die Rotation der Instanz an die der Kamera an
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.TurnTowardsXY(System.Single,System.Single)">
+            <summary>
+            Dreht das Objekt, so dass es zur Zielkoordinate blickt
+            </summary>
+            <param name="targetX">X-Koordinate</param>
+            <param name="targetY">Y-Koordinate</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.TurnTowardsXY(OpenTK.Vector3)">
+            <summary>
+            Verändert die Rotation der Instanz, so dass sie in Richtung der XY-Koordinaten blickt. Z-Unterschiede Unterschiede werden ignoriert.
+            [Geeignet, wenn die Kamera entlang der z-Achse blickt (Standard)]
+            </summary>
+            <param name="target">Zielkoordinaten</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.TurnTowardsXZ(System.Single,System.Single)">
+            <summary>
+            Verändert die Rotation der Instanz, so dass sie in Richtung der XZ-Koordinaten blickt. Vertikale Unterschiede werden ignoriert.
+            (Geeignet, wenn die Kamera entlang der y-Achse blickt)
+            </summary>
+            <param name="targetX">Zielkoordinate der x-Achse</param>
+            <param name="targetZ">Zielkoordinate der z-Achse</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.TurnTowardsXZ(OpenTK.Vector3)">
+            <summary>
+            Verändert die Rotation der Instanz, so dass sie in Richtung der XZ-Koordinaten blickt. Vertikale Unterschiede werden ignoriert.
+            (Geeignet, wenn die Kamera entlang der y-Achse blickt)
+            </summary>
+            <param name="target">Zielkoordinaten</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetDistanceTo(OpenTK.Vector3,System.Boolean)">
+            <summary>
+            Misst die Distanz zu einem Punkt
+            </summary>
+            <param name="position">Zielpunkt</param>
+            <param name="absolute">wenn true, wird die Position statt des Hitbox-Mittelpunkts zur Berechnung verwendet</param>
+            <returns>Distanz</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetDistanceTo(KWEngine2.GameObjects.GameObject,System.Boolean)">
+            <summary>
+            Misst die Distanz zu einem GameObject
+            </summary>
+            <param name="g">GameObject-Instanz</param>
+            <param name="absolute">wenn true, wird die Position statt des Hitbox-Mittelpunkts zur Berechnung verwendet</param>
+            <returns>Distanz</returns>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.IsInsideScreenSpace">
+            <summary>
+            Erfragt, ob das Objekt (mit kompletter Hitbox) noch von der Kamera gesehen werde kann
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetTextureRepeat(System.Single,System.Single)">
+            <summary>
+            Setzt die Texturwiederholungen für eine KWCube- oder KWSphere-Instanz
+            </summary>
+            <param name="repeatX">Breitenwiederholungen</param>
+            <param name="repeatY">Höhenwiederholungen</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetTextureTerrainBlendMapping(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Setzt Blendmapping für Terrains
+            </summary>
+            <param name="blendTexture">Blend Map (schwarz, rot, grün, blau)</param>
+            <param name="redTexture">Rottextur</param>
+            <param name="greenTexture">Grüntextur</param>
+            <param name="blueTexture">Blautextur</param>
+            <param name="isFile">false, wenn die Texturen Teil der EXE sind ("Eingebettete Ressource")</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.ToString">
+            <summary>
+            Zusammenfassung dieser Instanz
+            </summary>
+            <returns>String mit Instanzdetails</returns>
+        </member>
+        <member name="T:KWEngine2.Helper.HelperAudio">
+            <summary>
+            Helfer-Klasse für Audioeffekte
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperAudio.SoundPlay(System.String,System.Boolean,System.Single)">
+            <summary>
+            Spielt einen Ton ab
+            </summary>
+            <param name="audiofile">Audiodatei</param>
+            <param name="playLooping">looped playback?</param>
+            <param name="volume">Lautstärke</param>
+            <returns>ID des verwendeten Audiokanals</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperAudio.SoundChangeGain(System.Int32,System.Single)">
+            <summary>
+            Ändert die Lautstärke eines Tons
+            </summary>
+            <param name="sourceId">id der Audiospur</param>
+            <param name="gain">Lautstärke (0.0f bis 1.0f)</param>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperAudio.SoundStop(System.String)">
+            <summary>
+            Stoppt einen Ton
+            </summary>
+            <param name="audiofile">Audiodatei</param>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperAudio.SoundPreload(System.String)">
+            <summary>
+            Lädt eine Audiodatei in den Arbeitsspeicher
+            </summary>
+            <param name="audiofile">Audiodatei</param>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperAudio.SoundStop(System.Int32)">
+            <summary>
+            Stoppt den angegebenen Audiokanal
+            </summary>
+            <param name="sourceId">Lanalnummer</param>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperAudio.SoundStopAll">
+            <summary>
+            Stoppt alle Töne
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperCamera.mOrientation">
+            <summary>
+            Initialorientierung
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperCamera.GetLookAtVector">
+            <summary>
+            Berechnet den aktuellen Richtungsvektor anhand der Kamerasicht
+            </summary>
+            <returns>Richtungsvektor</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperCamera.GetViewMatrix(OpenTK.Vector3)">
+            <summary>
+            Berechent die aktuelle View-Matrix
+            </summary>
+            <returns>View-Matrix (4x4)</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperCamera.MoveXZ(System.Single,System.Single,System.Single)">
+            <summary>
+            Berechnet die Positionsänderung der Kamera entlang der XZ-Achsen mit den angegeben Werten.
+            </summary>
+            <param name="forward">-1, 0 oder +1 für Vorwärtsbewegung entlang der Sicht</param>
+            <param name="sides">-1, 0 oder +1 für Seitwärtsbewegung</param>
+            <param name="speed">Geschwindigkeit</param>
+            <returns>Der Bewegungsvektor, der anschließend zu gehen wäre</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperCamera.MoveXYZ(System.Single,System.Single,System.Single)">
+            <summary>
+            Bewegt die Kamera entlang der XZ-Achsen mit den angegeben Werten.
+            </summary>
+            <param name="forward">-1, 0 oder +1 für Vorwärtsbewegung entlang der Sicht</param>
+            <param name="sides">-1, 0 oder +1 für Seitwärtsbewegung</param>
+            <param name="speed">Geschwindigkeit</param>
+            <returns>Der Bewegungsvektor, der anschließend zu gehen wäre</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperCamera.AddRotation(System.Single,System.Single)">
+            <summary>
+            Fügt der aktuellen Kamerarotation neue Rotation gemäß der relativen Mausbewegung (im Verhältnis zur Bildmitte) hinzu
+            </summary>
+            <param name="deltaX">x-Verschiebung</param>
+            <param name="deltaY">y-Verschiebung</param>
+        </member>
+        <member name="P:KWEngine2.Helper.HelperDDS.BitmapImage">
+            <summary>
+            Returns a System.Imaging.Bitmap containing the DDS image.
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Helper.HelperDDS.IsValid">
+            <summary>
+            Returns the DDS image is valid format.
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Helper.HelperDDS.PixelFormat">
+            <summary>
+            Various pixel formats/compressors used by the DDS image.
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperDDS.PixelFormat.RGBA">
+            <summary>
+            32-bit image, with 8-bit red, green, blue and alpha.
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperDDS.PixelFormat.RGB">
+            <summary>
+            24-bit image with 8-bit red, green, blue.
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperDDS.PixelFormat.DXT1">
+            <summary>
+            16-bit DXT-1 compression, 1-bit alpha.
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperDDS.PixelFormat.DXT2">
+            <summary>
+            DXT-2 Compression
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperDDS.PixelFormat.DXT3">
+            <summary>
+            DXT-3 Compression
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperDDS.PixelFormat.DXT4">
+            <summary>
+            DXT-4 Compression
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperDDS.PixelFormat.DXT5">
+            <summary>
+            DXT-5 Compression
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperDDS.PixelFormat.THREEDC">
+            <summary>
+            3DC Compression
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperDDS.PixelFormat.ATI1N">
+            <summary>
+            ATI1n Compression
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperDDS.PixelFormat.UNKNOWN">
+            <summary>
+            Unknown pixel format.
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Helper.InvalidFileHeaderException">
+            <summary>
+            Thrown when an invalid file header has been encountered.
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Helper.NotADDSImageException">
+            <summary>
+            Thrown when the data does not contain a DDS image.
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Helper.UnknownFileFormatException">
+            <summary>
+            Thrown when there is an unknown compressor used in the DDS file.
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Helper.HelperGeneral">
+            <summary>
+            Helferklasse für Mathefunktionen
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperGeneral.NormalizeValueToRange(System.Single,System.Single,System.Single)">
+            <summary>
+            Normalisiert einen Wert innerhalb eines Bereichs auf den Wertebereich 0 bis 1
+            </summary>
+            <param name="value">zu normalisierender Wert</param>
+            <param name="rangeMin">Bereichsminimum</param>
+            <param name="rangeMax">Bereichsmaximum</param>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperGeneral.ScaleToRange(System.Int32,System.Int32,System.Single[])">
+            <summary>
+            Skaliert die Werte innerhalb eines float-Arrays, so dass sie in den durch lowerBound und upperBound angegebenen Bereich passen
+            </summary>
+            <param name="lowerBound">Untergrenze</param>
+            <param name="upperBound">Obergrenze</param>
+            <param name="array">Werte (Achtung: Werden in-place manipuliert!)</param>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperGeneral.Clamp(System.Single,System.Single,System.Single)">
+            <summary>
+            Beschneidet Werte
+            </summary>
+            <param name="v">Wert</param>
+            <param name="l">Untergrenze</param>
+            <param name="u">Obergrenze</param>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperGeneral.GetNormalizedMouseCoords(System.Int32,System.Int32)">
+            <summary>
+            Gibt die normalisierten 2D-Mauskoordinaten relativ zur Fensterposition an
+            </summary>
+            <param name="mousex">x-Koordinate der Mausposition auf dem Bildschirm</param>
+            <param name="mousey">x-Koordinate der Mausposition auf dem Bildschirm</param>
+            <returns>Normalisierte Mauskoordinaten im Bereich -1 bis +1</returns>
+        </member>
+        <member name="T:KWEngine2.Helper.HelperIntersection">
+            <summary>
+            Helferklasse für Kollisionen und Schnittoperationen
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.PickGameObjectsFromLookAtVector(KWEngine2.GameObjects.GameObject,OpenTK.Vector3,System.Single)">
+            <summary>
+            Erzeugt einen Strahl in Blickrichtung der Instanz und erstellt eine Liste aller Objekte, die von diesem Strahl getroffen werden.
+            </summary>
+            <param name="caller">Aufrufendes Objekt (in der Regel 'this')</param>
+            <param name="offset">Relative Anpassung der Startposition des Strahls</param>
+            <param name="maxDistance">Maximale Reichweite des Strahls [Standard: 0 (unendlich)]</param>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.PickGameObject(OpenTK.Input.MouseState,System.Int32,System.Int32)">
+            <summary>
+            Gibt das GameObject zurück, das unter dem Mauszeiger liegt (Instanzen müssen mit IsPickable = true gesetzt haben)
+            </summary>
+            <param name="ms">Mausinformationen</param>
+            <param name="offsetX">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="offsetY">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <returns>Gewähltes GameObject</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.PickGameObjectsFrom(OpenTK.Vector3,OpenTK.Vector3,System.Single)">
+            <summary>
+            Erzeugt einen Strahl von der angegebenen Position in die angegebene Richtung und gibt alle Objekte die innerhalb dieser Blickrichtung liegen als Liste zurück.
+            </summary>
+            <param name="position">Startposition</param>
+            <param name="direction">Blickrichtung (relativ)</param>
+            <param name="maxDistance">Maximale Suchdistanz [Standard: 0 (unendlich)]</param>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.PickGameObjects(OpenTK.Input.MouseState,System.Int32,System.Int32)">
+            <summary>
+            Gibt eine Liste von GameObject-Instanzen zurück, die unter dem Mauszeiger liegen (Instanzen müssen mit IsPickable = true gesetzt haben)
+            </summary>
+            <param name="ms">Mausinformationen</param>
+            <param name="offsetX">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="offsetY">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <returns>Liste betroffener GameObject-Instanzen</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.IsMouseCursorOnAny``1(OpenTK.Input.MouseState,OpenTK.Vector3@,System.Int32,System.Int32,KWEngine2.MouseIntersectionPrecision)">
+            <summary>
+            Gibt die am nächsten liegende (vom Mauszeiger überlagerte) GameObject-Instanz inkl. der genauen Mausposition auf dem Objekt zurück
+            </summary>
+            <typeparam name="T">Beliebige Unterklasse von GameObject</typeparam>
+            <param name="ms">Aktueller Mausstatus</param>
+            <param name="intersectionPoint">Punkt, an dem der Mauszeiger auf das Objekt trifft</param>
+            <param name="offsetX">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="offsetY">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="precision">Präzision der Messung (Standard: Box für genauere Messung)</param>
+            <returns>Die GameObject-Instanz, die der Kamera am nächsten ist</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.IsMouseCursorOnAny``1(OpenTK.Input.MouseState,System.Int32,System.Int32,KWEngine2.MouseIntersectionPrecision)">
+            <summary>
+            Gibt die am nächsten liegende (vom Mauszeiger überlagerte) GameObject-Instanz zurück
+            </summary>
+            <typeparam name="T">Beliebige Unterklasse von GameObject</typeparam>
+            <param name="ms">Aktueller Mausstatus</param>
+            <param name="offsetX">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="offsetY">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="precision">Präzision der Messung (Standard: Box für genauere Messung)</param>
+            <returns>Die GameObject-Instanz, die der Kamera am nächsten ist</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.GetRayIntersectionPointOnHitbox(KWEngine2.GameObjects.GameObject,OpenTK.Vector3,OpenTK.Vector3,OpenTK.Vector3@,KWEngine2.MouseIntersectionPrecision)">
+            <summary>
+            Prüft, ob ein Strahl die Hitbox einer GameObject-Instanz trifft und gibt die genaue Position des Schnittpunkts an
+            </summary>
+            <param name="g">Zu prüfende GameObject-Instanz</param>
+            <param name="origin">Ursprung des Strahls</param>
+            <param name="worldRay">Richtung des Strahls (muss normalisiert sein)</param>
+            <param name="intersectionPoint">Ergebnis der Prüfung (Position des Schnittpunkts)</param>
+            <param name="precision">Präzision der Prüfung</param>
+            <returns>true, wenn der Strahl das Objekt trifft</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.IsPointInsideBox(OpenTK.Vector3,OpenTK.Vector3,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Prüft, ob ein Punkt innerhalb einer Box liegt.
+            </summary>
+            <param name="pos">Zu prüfender Punkt</param>
+            <param name="center">Zentrum der Box</param>
+            <param name="width">Breite der Box</param>
+            <param name="height">Breite der Box</param>
+            <param name="depth">Breite der Box</param>
+            <param name="hitboxScale">Skalierung der Breite/Höhe/Tiefe</param>
+            <returns>true, wenn der Punkt innerhalb der Box liegt</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.IsPointInsideSphere(OpenTK.Vector3,OpenTK.Vector3,System.Single,System.Single)">
+            <summary>
+            Prüft, ob sich ein Punkt innerhalb einer Kugel befindet
+            </summary>
+            <param name="pos">zu prüfender Punkt</param>
+            <param name="center">Zentrum der Kugel</param>
+            <param name="diameter">Durchmesser der Kugel</param>
+            <param name="hitboxScale">Skalierung des Durchmessers</param>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.IsPointInsideGameObject(OpenTK.Vector3,KWEngine2.GameObjects.GameObject)">
+            <summary>
+            Prüft, ob sich ein Punkt innerhalb der Hitbox einer GameObject-Instanz befindet
+            </summary>
+            <param name="point">Zu prüfender Punkt in der Welt</param>
+            <param name="g">GameObject-Instanz für die die Prüfung durchgeführt werden soll</param>
+            <returns>true, wenn sich der Punkt innerhalb der Hitbox befindet</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.GetMouseIntersectionPoint(OpenTK.Input.MouseState,KWEngine2.Plane,System.Single,System.Int32,System.Int32)">
+            <summary>
+            Konvertiert 2D-Mauskoordinaten in 3D-Koordinaten
+            </summary>
+            <param name="ms">Mausinformationen</param>
+            <param name="planeNormal">Kollisionsebene (Standard: Camera)</param>
+            <param name="planeHeight">Höhe der Kollisionsebene</param>
+            <param name="offsetX">(optionale) Seitenkorrektur in Pixeln</param>
+            <param name="offsetY">(optionale) Höhenkorrektur in Pixeln</param>
+            <returns>3D-Mauskoordinaten</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperIntersection.IsMouseCursorInsideHitbox(KWEngine2.GameObjects.GameObject,OpenTK.Input.MouseState,System.Int32,System.Int32,KWEngine2.MouseIntersectionPrecision)">
+            <summary>
+            Erfragt, ob der Mauszeiger (näherungsweise) auf dem Objekt liegt 
+            </summary>
+            <param name="g">Zu untersuchendes GameObject</param>
+            <param name="ms">Mausinformationen</param>
+            <param name="offsetX">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="offsetY">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="precision">Genauigkeit der Prüfung (Standard: Box für eine genauere Prüfung)</param>
+            <returns>true, wenn der Mauszeiger auf dem Objekt liegt</returns>
+        </member>
+        <member name="T:KWEngine2.Helper.HelperRandom">
+            <summary>
+            Helferklasse für Zufallszahlen
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Helper.HelperRandom.generator">
+            <summary>
+            Generatorfeldvariable
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRandom.GetRandomNumber(System.Single,System.Single)">
+            <summary>
+            Berechnet eine Zufallszahl zwischen zwei Werten (beide inklusive)
+            </summary>
+            <param name="min">(inklusive) Untergrenze</param>
+            <param name="max">(inklusive) Obergrenze</param>
+            <returns>Zufallszahl</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRandom.GetRandomNumber(System.Int32,System.Int32)">
+            <summary>
+            Berechnet eine Zufallszahl zwischen zwei Ganzzahlwerten (beide inklusive)
+            </summary>
+            <param name="min">(inklusive) Untergrenze</param>
+            <param name="max">(inklusive) Obergrenze</param>
+            <returns></returns>
+        </member>
+        <member name="T:KWEngine2.Helper.HelperRotation">
+            <summary>
+            Helferklasse für Rotationsberechnungen
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRotation.RotateVector(OpenTK.Vector3,System.Single,KWEngine2.Plane)">
+            <summary>
+            Berechnet den Vektor, der entsteht, wenn der übergebene Vektor um die angegebenen Grad rotiert wird
+            </summary>
+            <param name="vector">zu rotierender Vektor</param>
+            <param name="degrees">Rotation (in Grad)</param>
+            <param name="plane">Einheitsvektor, um den rotiert wird</param>
+            <returns>Rotierter Vektor</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRotation.RotateVectorByQuaternion(OpenTK.Vector3,OpenTK.Quaternion)">
+            <summary>
+            Rotiert einen Vektor mit Hilfe der angegebenen Quaternion (Hamilton-Produkt)
+            </summary>
+            <param name="source">zu rotierender Vektor</param>
+            <param name="rotation">Rotation als Quaternion</param>
+            <returns>rotierter Vektor</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRotation.ConvertQuaternionToEulerAngles(OpenTK.Quaternion)">
+            <summary>
+            Konvertiert eine in Quaternion angegebene Rotation in eine XYZ-Rotation (in Grad)
+            </summary>
+            <param name="q">zu konvertierendes Quaternion</param>
+            <returns>XYZ-Rotation als Vector3 (in Grad)</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRotation.CalculateRotationForArcBallCamera(OpenTK.Vector3,System.Single,System.Single,System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Berechnet die neue Kameraposition in Abhängigkeit der Mausbewegung.
+            </summary>
+            <param name="pivot">Dreh- und Angelpunkt</param>
+            <param name="distance">Distanz zum Dreh- und Angelpunkt</param>
+            <param name="degreesLeftRight">Grad der Rotation nach links oder rechts</param>
+            <param name="degreesUpDown">Grad der Rotation nach unten oder oben</param>
+            <param name="invertX">invertiert die Links-Rechts-Rotation, wenn aktiv</param>
+            <param name="invertY">invertiert die Oben-Unten-Rotation, wenn aktiv</param>
+            <returns>Neue Kameraposition</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRotation.CalculateRotationAroundPointOnAxis(OpenTK.Vector3,System.Single,System.Single,KWEngine2.Plane)">
+            <summary>
+            Berechnet die Position eines Punkts, der um einen angegeben Punkt entlang einer Achse rotiert wird
+            </summary>
+            <param name="point">Mittelpunkt der Rotation</param>
+            <param name="distance">Distanz zum Mittelpunkt</param>
+            <param name="degrees">Grad der Rotation</param>
+            <param name="plane">Achse der Rotation (Standard: Y)</param>
+            <returns>Position des rotierten Punkts</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRotation.CalculateRotationAroundPointOnAxis(OpenTK.Vector3,System.Single,System.Single,OpenTK.Vector3)">
+            <summary>
+            Berechnet die Position eines Punkts, der um einen angegeben Punkt entlang einer Achse rotiert wird
+            </summary>
+            <param name="point">Mittelpunkt der Rotation</param>
+            <param name="distance">Distanz zum Mittelpunkt</param>
+            <param name="degrees">Grad der Rotation</param>
+            <param name="axis">Achse der Rotation (normalisiert!)</param>
+            <returns>Position des rotierten Punkts</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRotation.GetRotationForPoint(OpenTK.Vector3,OpenTK.Vector3)">
+            <summary>
+            Erfragt die Rotation, die nötig wäre, damit eine Quelle zu einem Ziel guckt
+            </summary>
+            <param name="source">Quellposition</param>
+            <param name="target">Zielposition</param>
+            <returns>Rotation</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRotation.GetQuaternionForEulerDegrees(System.Single,System.Single,System.Single)">
+            <summary>
+            Berechnet ein Quaternion aus den übergebenen Achsenrotationen (in Grad).
+            (Die Rotationsreihenfolge ist Z -> Y -> X)
+            </summary>
+            <param name="x">x-Achsenrotation (in Grad)</param>
+            <param name="y">y-Achsenrotation (in Grad)</param>
+            <param name="z">z-Achsenrotation (in Grad)</param>
+            <returns>Kombinierte Rotation als Quaternion-Instanz</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperRotation.GetRotationTowardsCamera(KWEngine2.GLWindow)">
+            <summary>
+            Gibt die Rotation für ein Objekt an, die es benötigt, um in Richtung der Kamera ausgerichtet zu sein (Billboarding)
+            </summary>
+            <returns>Rotation</returns>
+        </member>
+        <member name="T:KWEngine2.Helper.HelperSkybox">
+            <summary>
+            Hilfsklasse für das Erstellen eigener Skyboxes bzw. Environment Maps
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperSkybox.CreateSkyboxFromCurrentSceneAndExit(System.Int32)">
+            <summary>
+            Erstellt eine Skybox (oder Environment Map) für die aktuelle Szene als Bitmap
+            </summary>
+            <param name="resolution">Auflösung der Skybox (Standard: 4096)</param>
+        </member>
+        <member name="T:KWEngine2.Helper.HelperVector">
+            <summary>
+            Helferklasse für Vektoroperationen
+            </summary>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperVector.ReflectVector(OpenTK.Vector3,OpenTK.Vector3)">
+            <summary>
+            Reflektiert den eingehenden Vektor 'directionIn' am Ebenenvektor 'surfaceNormal'
+            </summary>
+            <param name="directionIn">Eingehender Vektor</param>
+            <param name="surfaceNormal">Ebenenvektor</param>
+            <returns>Reflektierter Vektor</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperVector.RotateVectorByQuaternion(OpenTK.Vector3,OpenTK.Quaternion)">
+            <summary>
+            Rotiert einen Vektor mit Hilfe der angegebenen Quaternion (Hamilton-Produkt)
+            </summary>
+            <param name="source">zu rotierender Vektor</param>
+            <param name="rotation">Rotation als Quaternion</param>
+            <returns>rotierter Vektor</returns>
+        </member>
+        <member name="M:KWEngine2.Helper.HelperVector.RotateVector(OpenTK.Vector3,System.Single,KWEngine2.Plane)">
+            <summary>
+            Berechnet den Vektor, der entsteht, wenn der übergebene Vektor um die angegebenen Grad rotiert wird
+            </summary>
+            <param name="vector">zu rotierender Vektor</param>
+            <param name="degrees">Rotation (in Grad)</param>
+            <param name="plane">Einheitsvektor, um den rotiert wird</param>
+            <returns>Rotierter Vektor</returns>
+        </member>
+        <member name="T:KWEngine2.MouseIntersectionPrecision">
+            <summary>
+            Steuert die Genauigkeit, mit der erkannt wird, ob der Mauszeiger sich über einem Objekt befindet (Standard: Box)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.MouseIntersectionPrecision.Box">
+            <summary>
+            Verwendet die Hitbox des Objekts (kann je nach Perspektive vermehrt falsch-negative Rückmeldungen liefern)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.MouseIntersectionPrecision.Sphere">
+            <summary>
+            Verwendet eine Kugel mit dem durchschnittlichen Durchmesser der würfelartigen Hitbox (kann vermehrt falsch-positive Rückmeldungen liefern)
+            </summary>
+        </member>
+        <member name="T:KWEngine2.ProjectionType">
+            <summary>
+            Steuert die 3D-Darstellung der Kamera
+            </summary>
+        </member>
+        <member name="F:KWEngine2.ProjectionType.Perspective">
+            <summary>
+            Nahe Objekte werden größer gezeichnet als ferne Objekte (Standard)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.ProjectionType.Orthographic">
+            <summary>
+            Alle Objekte werden ungeachtet der Kameradistanz gleich groß gezeichnet (ideal für 2D)
+            </summary>
+        </member>
+        <member name="T:KWEngine2.GridType">
+            <summary>
+            Einheit zur Anzeige eines 10 Einheiten großen Gitternetzes
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GridType.None">
+            <summary>
+            Kein Gitternetz
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GridType.GridXZ">
+            <summary>
+            Ein Gitternetz auf der durch die XZ-Achsen aufgespannten Ebene
+            </summary>
+        </member>
+        <member name="F:KWEngine2.GridType.GridXY">
+            <summary>
+            Ein Gitternetz auf der durch die XY-Achsen aufgespannten Ebene
+            </summary>
+        </member>
+        <member name="T:KWEngine2.FontFace">
+            <summary>
+            Schriftart der HUD-Objekte
+            </summary>
+        </member>
+        <member name="F:KWEngine2.FontFace.Anonymous">
+            <summary>
+            "Anonymous" (Standardschriftart)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.FontFace.MajorMonoDisplay">
+            <summary>
+            "Major Mono Display"
+            </summary>
+        </member>
+        <member name="F:KWEngine2.FontFace.NovaMono">
+            <summary>
+            "Nova Mono"
+            </summary>
+        </member>
+        <member name="F:KWEngine2.FontFace.XanhMono">
+            <summary>
+            "Xanh Mono"
+            </summary>
+        </member>
+        <member name="T:KWEngine2.PerformanceUnit">
+            <summary>
+            Einheit zur Anzeige der Frame-Performance
+            </summary>
+        </member>
+        <member name="F:KWEngine2.PerformanceUnit.Disabled">
+            <summary>
+            Deaktiviert
+            </summary>
+        </member>
+        <member name="F:KWEngine2.PerformanceUnit.FrameTimeInMilliseconds">
+            <summary>
+            Millisekunden
+            </summary>
+        </member>
+        <member name="F:KWEngine2.PerformanceUnit.FramesPerSecond">
+            <summary>
+            Bilder pro Sekunde
+            </summary>
+        </member>
+        <member name="T:KWEngine2.PostProcessingState">
+            <summary>
+            Aktivierung von Post-Processing-Effekten (Standard: hohe Qualität)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.PostProcessingState.HighQuality">
+            <summary>
+            Standard
+            </summary>
+        </member>
+        <member name="F:KWEngine2.PostProcessingState.LowQuality">
+            <summary>
+            Niedrige Qualität (Artefaktbildung möglich)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.PostProcessingState.Disabled">
+            <summary>
+            Ausgeschaltet
+            </summary>
+        </member>
+        <member name="T:KWEngine2.CubeSide">
+            <summary>
+            Seite des KWCube
+            </summary>
+        </member>
+        <member name="F:KWEngine2.CubeSide.All">
+            <summary>
+            Alle Würfelseiten
+            </summary>
+        </member>
+        <member name="F:KWEngine2.CubeSide.Front">
+            <summary>
+            Frontseite (+Z)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.CubeSide.Back">
+            <summary>
+            Rückseite (-Z)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.CubeSide.Left">
+            <summary>
+            Links (-X)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.CubeSide.Right">
+            <summary>
+            Rechts (+X)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.CubeSide.Top">
+            <summary>
+            Oben (+Y)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.CubeSide.Bottom">
+            <summary>
+            Unten (-Y)
+            </summary>
+        </member>
+        <member name="T:KWEngine2.TextureType">
+            <summary>
+            Art der Textur (Standard: Diffuse)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.TextureType.Albedo">
+            <summary>
+            Standardtextur
+            </summary>
+        </member>
+        <member name="F:KWEngine2.TextureType.Normal">
+            <summary>
+            Normal Map
+            </summary>
+        </member>
+        <member name="F:KWEngine2.TextureType.Metalness">
+            <summary>
+            Metalness Map (PBR Workflow)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.TextureType.Roughness">
+            <summary>
+            Roughness Map (PBR Workflow)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.TextureType.Light">
+            <summary>
+            Light Map
+            </summary>
+        </member>
+        <member name="F:KWEngine2.TextureType.Emissive">
+            <summary>
+            Emissive Map
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Plane">
+            <summary>
+            Bezeichnet den Ebenenvektor der senkrecht auf der gewünschten Ebene steht.
+            Soll die XZ-Achse gewählt werden, sollte demnach Plane.Y verwendet werden,
+            da der Vektor (0|1|0) senkrecht auf der XZ-Ebene steht.
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Plane.X">
+            <summary>
+            X
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Plane.Y">
+            <summary>
+            Y
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Plane.Z">
+            <summary>
+            Z
+            </summary>
+        </member>
+        <member name="F:KWEngine2.Plane.Camera">
+            <summary>
+            Kamerablickebene
+            </summary>
+        </member>
+        <member name="T:KWEngine2.KWEngine">
+            <summary>
+            Kernbibliothek der Engine
+            </summary>
+        </member>
+        <member name="P:KWEngine2.KWEngine.PostProcessing">
+            <summary>
+            Status der Post-Processing-Effekte (Standard: hohe Qualität)
+            </summary>
+        </member>
+        <member name="F:KWEngine2.KWEngine.MAX_BLOOM_BUFFERS">
+            <summary>
+            Anzahl der Renderschritte für den Glow-Effekt
+            </summary>
+        </member>
+        <member name="F:KWEngine2.KWEngine.MAX_BONE_WEIGHTS">
+            <summary>
+            Anzahl der Gewichte pro Knochen
+            </summary>
+        </member>
+        <member name="F:KWEngine2.KWEngine.MAX_BONES">
+            <summary>
+            Anzahl der Knochen pro GameObject
+            </summary>
+        </member>
+        <member name="F:KWEngine2.KWEngine.MAX_LIGHTS">
+            <summary>
+            Anzahl der Lichter pro Welt
+            </summary>
+        </member>
+        <member name="F:KWEngine2.KWEngine.MAX_SHADOWMAPS">
+            <summary>
+            Anzahl der Schattenlichter pro Welt (anteilig an MAX_LIGHTS)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.KWEngine.GlowRadius">
+            <summary>
+            Verhältnis zwischen innerem und äußerem Glühen (von 0 bis 1, Standard: 0.5)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.KWEngine.SweepAndPruneToleranceWidth">
+            <summary>
+            Toleranzbereich für die Kollisionssuche (Standard: 1 Längeneinheit)
+            Wenn nach Überschneidungen von Objekten gesucht wird, wird jede Hitbox
+            automatisch um die angegebene Länge vergrößert, um die im aktuellen Frame
+            passierenden Bewegungen mit zu berücksichtigen.
+            </summary>
+        </member>
+        <member name="P:KWEngine2.KWEngine.DebugShowPerformanceInTitle">
+            <summary>
+            Zeigt die Performance im Titelbereich des Fensters an
+            </summary>
+        </member>
+        <member name="P:KWEngine2.KWEngine.DeltaTimeFactor">
+            <summary>
+            Erfragt den aktuellen DeltaTimeFactor für den Frame
+            </summary>
+        </member>
+        <member name="P:KWEngine2.KWEngine.Projection">
+            <summary>
+            Stellt die 3D-Darstellung der Kamera ein (Standard: Perspective)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.KWEngine.WorldUp">
+            <summary>
+            Welt-Vektor, der angibt, wo 'oben' ist
+            </summary>
+        </member>
+        <member name="P:KWEngine2.KWEngine.MouseSensitivity">
+            <summary>
+            Empfindlichkeit des Mauszeigers im First-Person-Modus (Standard: 0.001f)
+            </summary>
+        </member>
+        <member name="M:KWEngine2.KWEngine.GetCurrentTimeInMilliseconds">
+            <summary>
+            Aktuelle Systemzeit in Millisekunden
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.KWEngine.GetModel(System.String)">
+            <summary>
+            Erfragt ein 3D-Modell aus der Engine-Datenbank
+            </summary>
+            <param name="name">Name des Modells</param>
+            <returns>Modell</returns>
+        </member>
+        <member name="P:KWEngine2.KWEngine.ShadowMapSize">
+            <summary>
+            Größe der Shadow Map (Erlaubt: 512 bis 4096, Standardwert: 1024)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.KWEngine.CurrentWorld">
+            <summary>
+            Aktuelle Welt
+            </summary>
+        </member>
+        <member name="P:KWEngine2.KWEngine.CurrentWindow">
+            <summary>
+            Fenster
+            </summary>
+        </member>
+        <member name="M:KWEngine2.KWEngine.BuildTerrainModel(System.String,System.String,System.String,System.Single,System.Single,System.Single,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Baut ein Terrain-Modell
+            </summary>
+            <param name="name">Name des Modells</param>
+            <param name="heightmap">Height Map Textur</param>
+            <param name="texture">Textur der Oberfläche</param>
+            <param name="width">Breite</param>
+            <param name="height">Höhe</param>
+            <param name="depth">Tiefe</param>
+            <param name="texRepeatX">Texturwiederholung Breite</param>
+            <param name="texRepeatZ">Texturwiederholung Tiefe</param>
+            <param name="isFile">false, wenn die Texturen Teil der EXE sind (Eingebettete Ressource)</param>
+        </member>
+        <member name="M:KWEngine2.KWEngine.LoadModelFromAssembly(System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Lädt ein Modell aus den eingebetteten Ressourcen
+            </summary>
+            <param name="name">Name des Modells</param>
+            <param name="path">Pfad zum Modell inkl. Dateiname</param>
+            <param name="flipTextureCoordinates">UV-Map umdrehen (Standard: true)</param>
+            <param name="callerName"></param>
+        </member>
+        <member name="M:KWEngine2.KWEngine.LoadModelFromFile(System.String,System.String,System.String)">
+            <summary>
+            Lädt ein Modell aus einer Datei
+            </summary>
+            <param name="name">Name des Modells</param>
+            <param name="filename">Datei des Modells</param>
+            <param name="callerName"></param>
+        </member>
+        <member name="T:KWEngine2.GLWindow">
+            <summary>
+            Fensterklasse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GLWindow.CurrentWorld">
+            <summary>
+            Aktuelle Welt
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GLWindow.CurrentWindow">
+            <summary>
+            Aktuelles Fenster
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GLWindow.AnisotropicFiltering">
+            <summary>
+            Gibt den Grad der anisotropischen Texturfilterung zurück (Standard: 1)
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GLWindow.#ctor">
+            <summary>
+            Standardkonstruktormethode
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GLWindow.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Standardkonstruktormethode
+            </summary>
+            <param name="width">Breite des Fensters</param>
+            <param name="height">Höhe des Fensters</param>
+        </member>
+        <member name="M:KWEngine2.GLWindow.#ctor(System.Int32,System.Int32,OpenTK.GameWindowFlags,System.Int32,System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Konstruktormethode
+            </summary>
+            <param name="width">Breite des Fensters</param>
+            <param name="height">Höhe des Fensters</param>
+            <param name="flag">FixedWindow oder FullScreen</param>
+            <param name="antialiasing">FSAA-Wert (Anti-Aliasing)</param>
+            <param name="vSync">VSync aktivieren</param>
+            <param name="multithreading">Multithreading aktivieren (Standard: false)</param>
+            <param name="textureAnisotropy">Level der anisotropischen Texturfilterung [1 bis 16, Standard: 1 (aus)]</param>
+            <param name="shadowMapSize">Größe der Shadow Map (Standard: 1024)</param>
+        </member>
+        <member name="M:KWEngine2.GLWindow.#ctor(System.Int32,System.Int32,OpenTK.GameWindowFlags,System.Int32,System.Boolean)">
+            <summary>
+            Konstruktormethode
+            </summary>
+            <param name="width">Breite des Fensters</param>
+            <param name="height">Höhe des Fensters</param>
+            <param name="flag">FixedWindow oder FullScreen</param>
+            <param name="antialiasing">FSAA-Wert (Anti-Aliasing)</param>
+            <param name="vSync">VSync aktivieren</param>
+        </member>
+        <member name="M:KWEngine2.GLWindow.OnLoad(System.EventArgs)">
+            <summary>
+            EventHandler für das erste Laden des Fensters
+            </summary>
+            <param name="e">Parameter</param>
+        </member>
+        <member name="M:KWEngine2.GLWindow.Dispose(System.Boolean)">
+            <summary>
+            Schließt das Fenster
+            </summary>
+            <param name="manual">true, wenn manuell herbeigeführt</param>
+        </member>
+        <member name="M:KWEngine2.GLWindow.OnRenderFrame(OpenTK.FrameEventArgs)">
+            <summary>
+            EventHandler für den Render-Thread
+            </summary>
+            <param name="e">Parameter</param>
+        </member>
+        <member name="M:KWEngine2.GLWindow.OnUpdateFrame(OpenTK.FrameEventArgs)">
+            <summary>
+            EventHandler für den Gameplay-Thread
+            </summary>
+            <param name="e">Parameter</param>
+        </member>
+        <member name="P:KWEngine2.GLWindow.IsMouseInWindow">
+            <summary>
+            Prüft, ob sich der Mauszeiger im Fenster befindet
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GLWindow.OnFocusedChanged(System.EventArgs)">
+            <summary>
+            EventHandler für Fokuswechsel
+            </summary>
+            <param name="e">Parameter</param>
+        </member>
+        <member name="P:KWEngine2.GLWindow.OffsetX">
+            <summary>
+            Verschiebung der X-Koordinate des Fensters zur korrekten Erfassung der Mauszeigerposition (Standard: -8)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.GLWindow.OffsetY">
+            <summary>
+            Verschiebung der Y-Koordinate des Fensters zur korrekten Erfassung der Mauszeigerposition (Standard: -32)
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GLWindow.OnResize(System.EventArgs)">
+            <summary>
+            EventHandler für Größenanpassung des Fensters
+            </summary>
+            <param name="e">Parameter</param>
+        </member>
+        <member name="M:KWEngine2.GLWindow.OnMove(System.EventArgs)">
+            <summary>
+            EventHandler für das Bewegen des Fensters
+            </summary>
+            <param name="e">Parameter</param>
+        </member>
+        <member name="M:KWEngine2.GLWindow.SetMouseCursorToWindowCenter">
+            <summary>
+            Setzt den Mauszeiger zurück auf die Fenstermitte
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GLWindow.GetWindowCenterPosition">
+            <summary>
+            Erfragt die Mitte des Bildschirms als Vector2-Instanz
+            </summary>
+            <returns>Mitte des Bildschirms (in Pixeln)</returns>
+        </member>
+        <member name="M:KWEngine2.GLWindow.GetMouseCursorMovement(OpenTK.Input.MouseState)">
+            <summary>
+            Ermittelt bei GLWindow.CursorGrabbed = true die relative Mausbewegung des aktuellen Frames
+            </summary>
+            <param name="ms">Mausstatus</param>
+            <returns>Relative X- und Y-Abweichung des Mauscursors als Vector2-Instanz</returns>
+        </member>
+        <member name="M:KWEngine2.GLWindow.SetWorld(KWEngine2.World)">
+            <summary>
+            Setzt die aktuelle Welt
+            </summary>
+            <param name="w">Welt-Instanz</param>
+        </member>
+        <member name="T:KWEngine2.Model.GeoAnimation">
+            <summary>
+            Animationsklasse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoAnimation.Name">
+            <summary>
+            Name der Animation
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoAnimation.DurationInTicks">
+            <summary>
+            Dauer der Animation
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoAnimation.TicksPerSecond">
+            <summary>
+            Ticks pro Sekunde
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoAnimation.AnimationChannels">
+            <summary>
+            Animationskanäle
+            </summary>
+        </member>
+        <member name="T:KWEngine2.Model.GeoModel">
+            <summary>
+            Modellklasse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.Root">
+            <summary>
+            Wurzelknoten
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.Path">
+            <summary>
+            Pfad zur Modelldatei
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.PathAbsolute">
+            <summary>
+            Absoluter Pfad zur Modelldatei
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.Animations">
+            <summary>
+            Animationsliste
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.HasBones">
+            <summary>
+            Verfügt das Modell über Knochen für Animationen?
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.Armature">
+            <summary>
+            Knoten des Skeletts
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.IsValid">
+            <summary>
+            Validität des Modells
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.Filename">
+            <summary>
+            Dateiname
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.TransformGlobalInverse">
+            <summary>
+            Globale Transformationsinvers-Matrix
+            </summary>
+        </member>
+        <member name="P:KWEngine2.Model.GeoModel.IsTerrain">
+            <summary>
+            Handelt es sich bei dem Modell um Terrain?
+            </summary>
+        </member>
+        <member name="T:KWEngine2.World">
+            <summary>
+            Welt-Klasse
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.DebugShowHitboxes">
+            <summary>
+            Zeige Hitbox von allen als Kollisionsobjekt markierten GameObject-Instanzen
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.DebugShowLookAtVectors">
+            <summary>
+            Zeige die aktuellen Blickrichtungen aller GameObject-Instanzen an
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.DebugShadowLight">
+            <summary>
+            Hält eine Referenz zu einem zu untersuchenden Lichtobjekt (nur Directional und Point Lights!)
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.DebugShowCoordinateSystem">
+            <summary>
+            Zeige Koordinatensystem
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.DebugShowCoordinateSystemGrid">
+            <summary>
+            Zeige 10 Einheiten großes Hilfsgitter auf der angegebenen Ebene
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.DebugShowPerformanceInTitle">
+            <summary>
+            Zeigt die Performance im Titelbereich des Fensters an
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.WorldCenter">
+            <summary>
+            Zentrum der Welt
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.WorldDistance">
+            <summary>
+            Radius der Welt
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.IsFirstPersonMode">
+            <summary>
+            Gibt an, ob der First-Person-Modus aktiv ist
+            </summary>
+        </member>
+        <member name="M:KWEngine2.World.GetFirstPersonObject">
+            <summary>
+            Erfragt das aktuelle FP-Objekt
+            </summary>
+            <returns>FP-Objekt</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetCurrentTimeInMilliseconds">
+            <summary>
+            Aktuelle Zeit in Millisekunden
+            </summary>
+            <returns>Zeit (in ms)</returns>
+        </member>
+        <member name="M:KWEngine2.World.SetFirstPersonObject(KWEngine2.GameObjects.GameObject,System.Single)">
+            <summary>
+            Startet den FP-Modus mit dem übergebenen Objekt
+            </summary>
+            <param name="go">FP-Objekt</param>
+            <param name="startRotationInDegrees">Startrotation (z.B. 180 Grad)</param>
+        </member>
+        <member name="P:KWEngine2.World.LightCount">
+            <summary>
+            Anzahl der Lichter in der Welt
+            </summary>
+        </member>
+        <member name="M:KWEngine2.World.SetTextureBackground(System.String,System.Single,System.Single,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Setzt das Hintergrundbild (2D)
+            </summary>
+            <param name="filename">Textur</param>
+            <param name="repeatX">Wiederholung Breite</param>
+            <param name="repeatY">Wiederholung Höhe</param>
+            <param name="clipX">Regelt, wie viel der Bildbreite genutzt wird (1 = 100%)</param>
+            <param name="clipY">Regelt, wie viel der Bildhöhe genutzt wird (1 = 100%)</param>
+            <param name="isFile">false, falls der Pfad Teil der EXE-Datei ist</param>
+        </member>
+        <member name="M:KWEngine2.World.SetTextureBackgroundOffset(System.Single,System.Single)">
+            <summary>
+            Versetzt den sichtbaren Teil des Hintergrundbilds um die angegebene Menge
+            </summary>
+            <param name="x">Verschiebung nach links (negativer Wert) oder rechts (positiver Wert)</param>
+            <param name="y">Verschiebung nach oben (negativer Wert) oder unten (positiver Wert)</param>
+        </member>
+        <member name="M:KWEngine2.World.SetTextureBackgroundBrightnessMultiplier(System.Single)">
+            <summary>
+            Verstärkt die Helligkeit des Hintergrundbilds (2D und 3D-Skybox)
+            </summary>
+            <param name="m">Verstärkung der Helligkeit (0.000001 bis 10) - Standardwert: 1</param>
+        </member>
+        <member name="M:KWEngine2.World.SetTextureSkybox(System.String,System.Boolean)">
+            <summary>
+            Setzt das 3D-Hintergrundbild
+            </summary>
+            <param name="filename">Skybox-Textur</param>
+            <param name="isFile">false, falls der Pfad Teil der EXE-Datei ist</param>
+        </member>
+        <member name="M:KWEngine2.World.SetTextureSkyboxRotation(System.Single)">
+            <summary>
+            Setzt die Rotation der Skybox (falls vorhanden)
+            </summary>
+            <param name="degrees">Grad der Rotation</param>
+        </member>
+        <member name="P:KWEngine2.World.CurrentWindow">
+            <summary>
+            Aktuelles Fenster
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.ZFar">
+            <summary>
+            Entfernung bis zu der die Kamera noch Objekte wahrnimmt
+            </summary>
+        </member>
+        <member name="P:KWEngine2.World.FOV">
+            <summary>
+            Field of View (Standard: 45 Grad)
+            </summary>
+        </member>
+        <member name="M:KWEngine2.World.GetCameraPosition">
+            <summary>
+            Kameraposition
+            </summary>
+            <returns>Positionswert</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetCameraTarget">
+            <summary>
+            Zielposition
+            </summary>
+            <returns>Positionswert</returns>
+        </member>
+        <member name="M:KWEngine2.World.SetCameraPosition(System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt die Kameraposition
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <param name="z">z</param>
+        </member>
+        <member name="M:KWEngine2.World.SetCameraPosition(OpenTK.Vector3)">
+            <summary>
+            Setzt die Kameraposition
+            </summary>
+            <param name="p">Position</param>
+        </member>
+        <member name="M:KWEngine2.World.SetCameraTarget(System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt das Blickziel der Kamera
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+            <param name="z">z</param>
+        </member>
+        <member name="M:KWEngine2.World.SetCameraTarget(OpenTK.Vector3)">
+            <summary>
+            Setzt das Blickziel der Kamera
+            </summary>
+            <param name="p">Zielkoordinaten</param>
+        </member>
+        <member name="M:KWEngine2.World.GetCameraLookAtVector">
+            <summary>
+            Erfragt den normalisierten Sichtvektor der Kamera
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KWEngine2.World.SetAmbientLight(OpenTK.Vector4)">
+            <summary>
+            Setzt das Umgebungslichts (dort wo die Sonne nicht scheint)
+            </summary>
+            <param name="ambient">Umgebungslicht</param>
+        </member>
+        <member name="M:KWEngine2.World.SetAmbientLight(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Setzt das Umgebungslichts (dort wo sonst kein Licht scheint)
+            </summary>
+            <param name="r">Rotanteil (0 - 1)</param>
+            <param name="g">Grünanteil (0 - 1)</param>
+            <param name="b">Blauanteil (0 - 1)</param>
+            <param name="intensity">Intensität (0 - 1)</param>
+        </member>
+        <member name="M:KWEngine2.World.Prepare">
+            <summary>
+            Vorbereitungsmethode
+            </summary>
+        </member>
+        <member name="M:KWEngine2.World.Act(OpenTK.Input.KeyboardState,OpenTK.Input.MouseState)">
+            <summary>
+            Act-Methode
+            </summary>
+            <param name="ks">Keyboardinfos</param>
+            <param name="ms">Mausinfos</param>
+        </member>
+        <member name="M:KWEngine2.World.GetModel(System.String)">
+            <summary>
+            Erfragt ein Modell aus der Engine-Datenbank
+            </summary>
+            <param name="name">Modellname</param>
+            <returns>Modelldaten</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetHUDObjects">
+            <summary>
+            Erfragt eine Liste der HUD-Objekte
+            </summary>
+            <returns>HUD-Objekte der Welt</returns>
+        </member>
+        <member name="M:KWEngine2.World.AddHUDObject(KWEngine2.GameObjects.HUDObject)">
+            <summary>
+            Fügt ein HUD-Objekt hinzu
+            </summary>
+            <param name="h">Objekt</param>
+        </member>
+        <member name="M:KWEngine2.World.RemoveHUDObject(KWEngine2.GameObjects.HUDObject)">
+            <summary>
+            Löscht ein HUD-Objekt
+            </summary>
+            <param name="h">Objekt</param>
+        </member>
+        <member name="M:KWEngine2.World.AddLightObject(KWEngine2.GameObjects.LightObject)">
+            <summary>
+            Fügt ein Lichtobjekt hinzu
+            </summary>
+            <param name="l">Objekt</param>
+        </member>
+        <member name="M:KWEngine2.World.RemoveLightObject(KWEngine2.GameObjects.LightObject)">
+            <summary>
+            Löscht ein Lichtobjekt
+            </summary>
+            <param name="l">Objekt</param>
+        </member>
+        <member name="M:KWEngine2.World.AddGameObject(KWEngine2.GameObjects.GameObject)">
+            <summary>
+            Fügt ein neues GameObject der Welt hinzu
+            </summary>
+            <param name="g">Objekt</param>
+        </member>
+        <member name="M:KWEngine2.World.AddGameObject(KWEngine2.GameObjects.Explosion)">
+            <summary>
+            Fügt ein neues Explosionsobjekt der Welt hinzu
+            </summary>
+            <param name="ex">Objekt</param>
+        </member>
+        <member name="M:KWEngine2.World.AddParticleObject(KWEngine2.GameObjects.ParticleObject)">
+            <summary>
+            Fügt ein neues Partikelobjekt hinzu
+            </summary>
+            <param name="g">Objekt</param>
+        </member>
+        <member name="M:KWEngine2.World.RemoveGameObject(KWEngine2.GameObjects.GameObject)">
+            <summary>
+            Löscht ein GameObject aus der Welt
+            </summary>
+            <param name="g">Objekt</param>
+        </member>
+        <member name="M:KWEngine2.World.GetGameObjects">
+            <summary>
+            Erfragt eine Liste mit aktuellen GameObjekt-Instanzen
+            </summary>
+            <returns>Instanzen</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetLightObjects">
+            <summary>
+            Erfragt eine Liste mit aktuellen LightObject-Instanzen
+            </summary>
+            <returns>Instanzen</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetGameObjectsByName(System.String)">
+            <summary>
+            Erstellt eine Liste aller GameObject-Instanzen mit einem bestimmten Namen
+            </summary>
+            <param name="name">gesuchter Name</param>
+            <returns>Liste der gefundenen Instanzen</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetGameObjectsByName``1(System.String)">
+            <summary>
+            Durchsucht die Liste der GameObject-Instanzen nach Objekten des gegebenen Typs mit dem gegebenen Namen
+            </summary>
+            <typeparam name="T">Klassenname</typeparam>
+            <param name="name">Name der gesuchten Objekte</param>
+            <returns>Liste der gefundenen Objekte</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetGameObjectsByType``1">
+            <summary>
+            Durchsucht die Liste der GameObject-Instanzen nach Objekten des gegebenen Typs
+            </summary>
+            <typeparam name="T">Klassenname</typeparam>
+            <returns>Liste der gefundenen Objekte</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetGameObjectByName``1(System.String)">
+            <summary>
+            Durchsucht die Liste der GameObject-Instanzen nach einem Objekt des gegebenen Typs mit dem gegebenen Namen
+            </summary>
+            <typeparam name="T">Klasse des gesuchten Objekts</typeparam>
+            <param name="name">Name des gesuchten Objekts</param>
+            <returns>Gesuchtes Objekt oder null (falls nicht gefunden)</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetGameObjectByName(System.String)">
+            <summary>
+            Durchsucht die Liste der GameObject-Instanzen nach einem Objekt mit dem gegebenen Namen
+            </summary>
+            <param name="name">Name des gesuchten Objekts</param>
+            <returns>Gesuchtes Objekt oder null (falls nicht gefunden)</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetLightObjectByName(System.String)">
+            <summary>
+            Durchsucht die Liste der LightObject-Instanzen nach einem Objekt mit dem gegebenen Namen
+            </summary>
+            <param name="name">Name des gesuchten Objekts</param>
+            <returns>Gesuchtes Objekt oder null (falls nicht gefunden)</returns>
+        </member>
+        <member name="M:KWEngine2.World.GetHUDObjectByName(System.String)">
+            <summary>
+            Durchsucht die Liste der HUDObject-Instanzen nach einem Objekt mit dem gegebenen Namen
+            </summary>
+            <param name="name">Name des gesuchten Objekts</param>
+            <returns>Gesuchtes Objekt oder null (falls nicht gefunden)</returns>
+        </member>
+        <member name="M:KWEngine2.World.SetFirstPersonObjectItemModel(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Setzt das Modell für die First-Person-Ansicht (z.B. Hände oder Waffen)
+            </summary>
+            <param name="modelname">Name des 3D-Modells</param>
+            <param name="isAffectedByLight">Gibt an, ob das Modell auf Lightquellen reagiert oder nicht</param>
+            <param name="receiveShadows">Gibt an, ob Schatten das Modell beeinflussen oder nicht</param>
+        </member>
+        <member name="M:KWEngine2.World.SetFirstPersonObjectItemModelViewOffset(System.Single,System.Single,System.Single)">
+            <summary>
+            Gibt die Verschiebung des First-Person-Modells (z.B. einer Waffe) entlang der drei Achsen an (Standard: 0)
+            </summary>
+            <param name="offsetLeftRight">Verschiebung links/rechts</param>
+            <param name="offsetUpDown">Verschiebung oben/unten</param>
+            <param name="offsetFrontBack">Verschiebung vorne/hinten</param>
+        </member>
+        <member name="M:KWEngine2.World.SetFirstPersonObjectItemModelRotation(System.Single,System.Single,System.Single)">
+            <summary>
+            Gibt die Rotation des First-Person-Modells für die drei Weltachsen an (Standard: 0 für alle Achsen)
+            </summary>
+            <param name="rotationX">Rotation um die lokale x-Achse</param>
+            <param name="rotationY">Rotation um die lokale y-Achse</param>
+            <param name="rotationZ">Rotation um die lokale z-Achse</param>
+        </member>
+        <member name="M:KWEngine2.World.SetFirstPersonObjectItemModelScale(System.Single)">
+            <summary>
+            Gibt die Skalierung des First-Person-Modells an (Standard: 1)
+            </summary>
+            <param name="scale">Skalierungsfaktor</param>
+        </member>
+    </members>
+</doc>
