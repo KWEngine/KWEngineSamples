@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "models", "models", "{F74A8B
 		models\ubot_specular.png = models\ubot_specular.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_KWEngineMouseInteractions", "02_KWEngineMouseInteractions\02_KWEngineMouseInteractions.csproj", "{CE42A7AD-7B31-4D00-B271-551F1BB6B362}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{5BD9E533-047D-42B7-9A6A-A2D1E4477EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BD9E533-047D-42B7-9A6A-A2D1E4477EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BD9E533-047D-42B7-9A6A-A2D1E4477EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE42A7AD-7B31-4D00-B271-551F1BB6B362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE42A7AD-7B31-4D00-B271-551F1BB6B362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE42A7AD-7B31-4D00-B271-551F1BB6B362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE42A7AD-7B31-4D00-B271-551F1BB6B362}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
