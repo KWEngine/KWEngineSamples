@@ -62,8 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CursorSphere.cs" />
+    <Compile Include="Floor.cs" />
     <Compile Include="GameWindow.cs" />
     <Compile Include="GameWorld.cs" />
+    <Compile Include="Obstacle.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

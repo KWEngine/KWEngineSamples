@@ -14,9 +14,28 @@ namespace _02_KWEngineMouseInteractions
 {
     class Player : GameObject
     {
+        private float _animationTime = 0;
+
         public override void Act(KeyboardState ks, MouseState ms)
         {
+            // Let the Engine project the mouse cursor to a plane where Y is the up-axis.
+            // The height of the final coordinates will be the center of the caller's (player's)
+            // hitbox:
+            Vector3 mouseCursorPosition3D = GetMouseIntersectionPoint(ms, Plane.Y);
 
+            // Let the player rotate in order to face the current mouse cursor. 
+            // TurnTowardsXZ uses the position's XZ values and ignores the Y value.
+            TurnTowardsXZ(mouseCursorPosition3D);
+
+            // Animate the player model's idle animation:
+            DoAnimation();
+        }
+
+        private void DoAnimation()
+        {
+            _animationTime = (_animationTime + 0.0025f * KWEngine.DeltaTimeFactor) % 1f;
+            AnimationID = 0;
+            AnimationPercentage = _animationTime;
         }
     }
 }

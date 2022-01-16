@@ -1315,6 +1315,17 @@
             <param name="offsetY">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
             <returns></returns>
         </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetMouseIntersectionPoint(OpenTK.Input.MouseState,System.Single,KWEngine2.Plane,System.Int32,System.Int32)">
+            <summary>
+            Erfragt den Kollisionspunkt des Mauszeigers mit der 3D-Welt (auf beliebiger Höhe)
+            </summary>
+            <param name="ms">Mausinformationen</param>
+            <param name="planeHeight">Höhe der Schnittebene</param>
+            <param name="plane">Kollisionsebene (Standard: Camera)</param>
+            <param name="offsetX">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <param name="offsetY">optionale Verschiebung des Cursors auf der X-Achse in Pixeln (Standard: 0)</param>
+            <returns></returns>
+        </member>
         <member name="M:KWEngine2.GameObjects.GameObject.IsMouseCursorInsideMyHitbox(OpenTK.Input.MouseState,System.Int32,System.Int32)">
             <summary>
             Erfragt, ob der Mauszeiger (näherungsweise) auf dem Objekt liegt 
