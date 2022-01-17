@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "models", "models", "{F74A8B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_KWEngineMouseInteractions", "02_KWEngineMouseInteractions\02_KWEngineMouseInteractions.csproj", "{CE42A7AD-7B31-4D00-B271-551F1BB6B362}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_KWEngineCollisionDetection", "03_KWEngineCollisionDetection\03_KWEngineCollisionDetection.csproj", "{8ECC6103-8398-4339-9E47-402D3D86CE71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{CE42A7AD-7B31-4D00-B271-551F1BB6B362}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE42A7AD-7B31-4D00-B271-551F1BB6B362}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE42A7AD-7B31-4D00-B271-551F1BB6B362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ECC6103-8398-4339-9E47-402D3D86CE71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ECC6103-8398-4339-9E47-402D3D86CE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ECC6103-8398-4339-9E47-402D3D86CE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ECC6103-8398-4339-9E47-402D3D86CE71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
