@@ -6,40 +6,41 @@ using OpenTK;
 using OpenTK.Input;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _03_KWEngineCollisionDetection
 {
-    enum JumpState
-    {
-        Stand,
-        Jump,
-        Fall
-    }
+    
 
-    class Player : GameObject
+    class PlayerComplex : GameObject
     {
+        private enum JumpState
+        {
+            Stand,
+            Jump,
+            Fall
+        }
+
         private readonly Vector3 GRAVITY = new Vector3(0, 0.01f, 0);        // gravity (always stays the same)
         private readonly Vector3 VELOCITYJUMP = new Vector3(0, 0.25f, 0);   // velocity per jump
 
         private float _animationTime = 0;
-        private JumpState _status = JumpState.Fall;                         // three status for stand, jump and fall
+        private JumpState _currentState = JumpState.Fall;                   // three states for stand, jump and fall (default)
         private Vector3 _velocity = Vector3.Zero;                           // jump velocity (will become > 0 at jump start and then starts decreasing)
-        private float _walkSpeed = 0.1f;
-        private bool _upKeyReleased = true;
+        private float _walkSpeed = 0.1f;                                    // default walking speed
+        private bool _upKeyReleased = true;                                 // true, if the up key has been released between jumps
 
         public override void Act(KeyboardState ks, MouseState ms)
         {
-            bool stateJustSwitched = false;
-            ProcessMovement(ks);
+            bool stateJustSwitched = false;                                 // becomes true if state just switched
+            
+            ProcessMovement(ks);                                            // handles basic movement inputs
 
-            if (IsJumpKeyPressed(ks))
-            {
-                if (_status == JumpState.Stand && _upKeyReleased == true)
-                { 
-                    _status = JumpState.Jump;
+            if (IsJumpKeyPressed(ks))                                       // if jump is pressed, switch state
+            {                                                               // and apply velocity:
+                if (_currentState == JumpState.Stand && _upKeyReleased == true)
+                {
+                    HelperAudio.SoundPlay(@".\sfx\jumpUp.ogg");
+                    _currentState = JumpState.Jump;
                     _velocity = VELOCITYJUMP;
                     _upKeyReleased = false;
                     stateJustSwitched = true;
@@ -59,42 +60,55 @@ namespace _03_KWEngineCollisionDetection
                 _upKeyReleased = true;
             }
 
-            if (_status == JumpState.Jump)
+            // if player is in jump or fall state, gravity is subtracted from its current velocity.
+            // if velocity passes < 0, state switches from jump (upwards) to fall (downwards):
+            if (_currentState == JumpState.Jump)                                  
             {
                 MoveOffset(_velocity);
                 _velocity = _velocity - GRAVITY * KWEngine.DeltaTimeFactor;
                 if (_velocity.Y <= 0)
                 {
                     _velocity.Y = 0;
-                    _status = JumpState.Fall;
+                    _currentState = JumpState.Fall;
                     stateJustSwitched = true;
                 }
             }
-            else if (_status == JumpState.Fall)
+            else if (_currentState == JumpState.Fall)
             {
-                _velocity = _velocity - GRAVITY * KWEngine.DeltaTimeFactor;
                 MoveOffset(_velocity);
+                _velocity = _velocity - GRAVITY * KWEngine.DeltaTimeFactor;
             }
 
+            // Get a list of all intersections for the player:
             List<Intersection> intersectionList = GetIntersections();
+            // Iterate through all intersections and apply each
+            // intersection's minimum-translation-vector (mtv):
             foreach (Intersection i in intersectionList)
             {
                 MoveOffset(i.MTV);
-                if (i.MTV.Y > 0 && _status == JumpState.Fall)
+                
+                // If the mtv tells the player to correct its position
+                // upwards, the player object must have hit the floor.
+                // Switch state to "stand" then:
+                if (i.MTV.Y > 0 && _currentState == JumpState.Fall)
                 {
-                    _status = JumpState.Stand;
-                    _velocity = Vector3.Zero;
-                    _animationTime = 0;
+                    HelperAudio.SoundPlay(@".\sfx\jumpLand.ogg");
+                    _currentState = JumpState.Stand;                    
+                    _velocity = Vector3.Zero;                               // reset velocity to 0 as well!
+                    _animationTime = 0; 
                 }
             }
 
-            // Animate the player model's idle animation:
+            // Process the player model's animations:
             DoAnimation(ks, stateJustSwitched);
         }
 
         private void ProcessMovement(KeyboardState ks)
         {
-            if (_status == JumpState.Stand)
+            // if the player is on the floor (incl. running as well),
+            // turn the object in walking direction and move if by
+            // its walking speed:
+            if (_currentState == JumpState.Stand)
             {
                 if (IsLeftKeyPressed(ks))
                 {
@@ -109,6 +123,9 @@ namespace _03_KWEngineCollisionDetection
             }
             else
             {
+                // If the player is jumping but has already released the jump key
+                // decrease the upwards velocity a little more in order to make
+                // the jump shorter:
                 if(!IsJumpKeyPressed(ks))
                 {
                     if(_velocity.Y > 0)
@@ -117,7 +134,8 @@ namespace _03_KWEngineCollisionDetection
                     }
                 }
 
-
+                // If the player is in the air and left/right is pressed, make sure that the player only has 1/8th
+                // of the speed (sideways). This effectively reduces air control:
                 bool leftRight = false;
                 if (IsLeftKeyPressed(ks))
                 {
@@ -129,6 +147,11 @@ namespace _03_KWEngineCollisionDetection
                     _velocity.X = MathHelper.Clamp(_velocity.X + (_walkSpeed / 8) * KWEngine.DeltaTimeFactor, -_walkSpeed, _walkSpeed);
                     leftRight = true;
                 }
+
+                // If the player did a side jump and is in the air but has released left/right keys
+                // make sure to slowly reduce the sideways velocity.
+                // This makes jumps shorter (in horizontal direction) if the direction keys
+                // (left/right) are only pressed at the beginning of the jump:
                 if(!leftRight)
                 {
                     if(_velocity.X < 0)
@@ -161,28 +184,33 @@ namespace _03_KWEngineCollisionDetection
 
         private void DoAnimation(KeyboardState ks, bool animationJustSwitched)
         {
-            if(_status == JumpState.Stand)
+            // If the player is on the floor...
+            if(_currentState == JumpState.Stand)
             {
+                // ..check if it is walking left or right:
                 if(IsLeftKeyPressed(ks) || IsRightKeyPressed(ks))
                 {
-                    // walk animation
-                    _animationTime = (_animationTime + 0.025f * KWEngine.DeltaTimeFactor) % 1f;
+                    // switch to walk animation id:
                     AnimationID = 2;
+                    _animationTime = (_animationTime + 0.025f * KWEngine.DeltaTimeFactor) % 1f;
                     AnimationPercentage = _animationTime;
                 }
                 else
                 {
-                    // idle animation
-                    _animationTime = (_animationTime + 0.0025f * KWEngine.DeltaTimeFactor) % 1f;
+                    // If player is standing still, switch to idle animation id:
                     AnimationID = 0;
+                    _animationTime = (_animationTime + 0.0025f * KWEngine.DeltaTimeFactor) % 1f;
                     AnimationPercentage = _animationTime;
                 }
             }
             else
             {
+                // If the player is not on the floor, switch to its jump animation id:
                 AnimationID = 3;
-                if (_status == JumpState.Jump)
+                if (_currentState == JumpState.Jump)
                 {
+                    // If the jump just started, make sure to rewind the animation percentage to 0
+                    // in order to play the jump animation from the beginning:
                     if(animationJustSwitched)
                     {
                         _animationTime = 0;

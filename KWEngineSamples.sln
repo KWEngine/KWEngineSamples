@@ -41,6 +41,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_KWEngineMouseInteraction
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_KWEngineCollisionDetection", "03_KWEngineCollisionDetection\03_KWEngineCollisionDetection.csproj", "{8ECC6103-8398-4339-9E47-402D3D86CE71}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sfx", "sfx", "{32399DF6-A361-4C3F-B290-AE44232565C2}"
+	ProjectSection(SolutionItems) = preProject
+		sfx\jumpLand.ogg = sfx\jumpLand.ogg
+		sfx\jumpUp.ogg = sfx\jumpUp.ogg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

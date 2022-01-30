@@ -1,4 +1,5 @@
 ﻿using KWEngine2;
+using KWEngine2.Helper;
 using OpenTK.Input;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,10 @@ namespace _03_KWEngineCollisionDetection
         {
             KWEngine.LoadModelFromFile("ubot", @".\models\ubot.fbx");
 
-            //SetCameraPosition(0, 0, 50);
-         
-            Player p = new Player();
+            PlayerSimple p = new PlayerSimple();
+            // PlayerComplex p = new PlayerComplex();       // use this instead for advanced player input handling
             p.SetModel("ubot");
-            p.SetScale(1);
             p.SetRotation(0, 90, 0);
-            p.SetPosition(0, 0, 0);
             p.IsCollisionObject = true;
             AddGameObject(p);
 
@@ -49,6 +47,9 @@ namespace _03_KWEngineCollisionDetection
             w02.SetScale(1, 10, 1);
             w02.IsCollisionObject = true;
             AddGameObject(w02);
+
+            HelperAudio.SoundPreload(@".\sfx\jumpUp.ogg");
+            HelperAudio.SoundPreload(@".\sfx\jumpLand.ogg");
         }
     }
 }
