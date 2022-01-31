@@ -33,16 +33,14 @@ namespace _04_LightsAndShadows
             _sunDegrees = (_sunDegrees - 0.5f * KWEngine.DeltaTimeFactor) % 360f;   // this will cycle from 0 to 359 and then back to 0
 
 
-            // RED LIGHT CONTROL_
-            Vector3 mouseCursorPos = HelperIntersection.GetMouseIntersectionPoint(ms, Plane.Y, 2);
+            // RED LIGHT CONTROL:
+            Vector3 mouseCursorPos = HelperIntersection.GetMouseIntersectionPoint(ms, Plane.Y, 3);
             _mouseLight.SetPosition(mouseCursorPos);
             _mouseLightSphere.SetPosition(mouseCursorPos);
         }
 
         public override void Prepare()
         {
-            WorldDistance = 10000;
-
             // Load custom model from model folder as "Nightshade":
             KWEngine.LoadModelFromFile("Nightshade", @".\models\Nightshade.fbx");
 
@@ -95,7 +93,7 @@ namespace _04_LightsAndShadows
 
             Immovable i02 = new Immovable();
             i02.SetModel("Nightshade");
-            i02.SetPosition(-5, 0, -2.5f);
+            i02.SetPosition(-2.5f, 0, -1.25f);
             i02.SetScale(2f);
             i02.IsShadowCaster = true;                                                              // does the object cast and receive shadows? (default: false)
             i02.AnimationID = 0;                                                                    // set the object's animation id (for animated models)
