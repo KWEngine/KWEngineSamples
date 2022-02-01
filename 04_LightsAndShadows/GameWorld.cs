@@ -60,7 +60,7 @@ namespace _04_LightsAndShadows
             _mouseLight.SetNearAndFarBounds(0.1f, 5);
             AddLightObject(_mouseLight);
 
-            // Initialize sphere object that shows the mouse cursor's position:
+            // Initialize sphere object that shows the mouse cursor's position (not needed but a nice gimmick):
             _mouseLightSphere = new Sphere();
             _mouseLightSphere.SetModel("KWSphere");
             _mouseLightSphere.SetGlow(1, 0.25f, 0.25f, 1);
@@ -77,7 +77,7 @@ namespace _04_LightsAndShadows
             f01.SetModel("KWCube");
             f01.SetTexture(@".\textures\tiles.jpg", TextureType.Albedo, CubeSide.All);              // regular texture file
             f01.SetTexture(@".\textures\tiles_normal.jpg", TextureType.Normal, CubeSide.All);       // (optional) normal map for custom light reflections
-            f01.SetTexture(@".\textures\tiles_roughness.jpg", TextureType.Roughness, CubeSide.All); // (optional) roughness map for specular highlights
+            f01.SetTexture(@".\textures\tiles_roughness.png", TextureType.Roughness, CubeSide.All); // (optional) roughness map for specular highlights
             f01.SetTextureRepeat(3, 3);                                                             // how many times the texture is tiled across the object?
             f01.SetScale(15, 0.2f, 15);                                                             
             f01.SetPosition(0, -0.1f, 0);
