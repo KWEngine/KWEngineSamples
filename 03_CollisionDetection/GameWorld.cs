@@ -14,6 +14,13 @@ namespace _03_CollisionDetection
 {
     class GameWorld : World
     {
+        private HUDObject _h1;
+
+        public HUDObject GetH1()
+        {
+            return _h1;
+        }
+
         public override void Act(KeyboardState ks, MouseState ms)
         {
          
@@ -38,6 +45,7 @@ namespace _03_CollisionDetection
             Obstacle o1 = new Obstacle();
             o1.SetModel("KWSphere");
             o1.IsCollisionObject = true;
+            o1.Name = "Obstacle #1";
             o1.SetPosition(-4, 0, 0);
             o1.SetColor(0, 1, 0);
             o1.SetScale(2);
@@ -46,12 +54,17 @@ namespace _03_CollisionDetection
             Obstacle o2 = new Obstacle();
             o2.SetModel("KWCube");
             o2.IsCollisionObject = true;
+            o2.Name = "Obstacle #2";
             o2.SetPosition(4, 0, 0);
             o2.SetColor(0, 1, 1);
             o2.SetScale(2);
             o2.SetRotation(0, 0, 45);
             AddGameObject(o2);
 
+            _h1 = new HUDObject(HUDObjectType.Text, 32, 32);
+            _h1.SetText("Collider: none");
+            _h1.SetFont(FontFace.MajorMonoDisplay);
+            AddHUDObject(_h1);
         }
     }
 }
