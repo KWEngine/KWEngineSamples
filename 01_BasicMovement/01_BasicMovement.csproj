@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81803170-71AA-420E-B8B8-EE4771D4F232}</ProjectGuid>
+    <ProjectGuid>{5BD9E533-047D-42B7-9A6A-A2D1E4477EAC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_04_LightsAndShadows</RootNamespace>
-    <AssemblyName>04_LightsAndShadows</AssemblyName>
+    <RootNamespace>_01_BasicMovement</RootNamespace>
+    <AssemblyName>01_BasicMovement</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>_04_LightsAndShadows.Program</StartupObject>
+    <StartupObject>_01_BasicMovement.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AssimpNet">
@@ -62,14 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Floor.cs" />
     <Compile Include="GameWindow.cs" />
     <Compile Include="GameWorld.cs" />
-    <Compile Include="Immovable.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sphere.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

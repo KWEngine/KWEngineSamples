@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_KWEngineMovement", "01_KWEngineMovement\01_KWEngineMovement.csproj", "{5BD9E533-047D-42B7-9A6A-A2D1E4477EAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_BasicMovement", "01_BasicMovement\01_BasicMovement.csproj", "{5BD9E533-047D-42B7-9A6A-A2D1E4477EAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{0115A3D2-E231-40E0-AE69-89014D84CFF0}"
 	ProjectSection(SolutionItems) = preProject
@@ -58,9 +58,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "models", "models", "{F74A8B
 		models\ubot_specular.png = models\ubot_specular.png
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_KWEngineMouseInteractions", "02_KWEngineMouseInteractions\02_KWEngineMouseInteractions.csproj", "{CE42A7AD-7B31-4D00-B271-551F1BB6B362}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_MouseInteractions", "02_MouseInteractions\02_MouseInteractions.csproj", "{CE42A7AD-7B31-4D00-B271-551F1BB6B362}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_KWEngineCollisionDetection", "03_KWEngineCollisionDetection\03_KWEngineCollisionDetection.csproj", "{8ECC6103-8398-4339-9E47-402D3D86CE71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_JumpAndRunPhysics", "10_JumpAndRunPhysics\10_JumpAndRunPhysics.csproj", "{8ECC6103-8398-4339-9E47-402D3D86CE71}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sfx", "sfx", "{32399DF6-A361-4C3F-B290-AE44232565C2}"
 	ProjectSection(SolutionItems) = preProject
@@ -69,6 +69,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sfx", "sfx", "{32399DF6-A36
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_LightsAndShadows", "04_LightsAndShadows\04_LightsAndShadows.csproj", "{81803170-71AA-420E-B8B8-EE4771D4F232}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_CollisionDetection", "03_CollisionDetection\03_CollisionDetection.csproj", "{FE085D9D-33E2-4C2D-AC14-5C52DA8082C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +94,10 @@ Global
 		{81803170-71AA-420E-B8B8-EE4771D4F232}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81803170-71AA-420E-B8B8-EE4771D4F232}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81803170-71AA-420E-B8B8-EE4771D4F232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE085D9D-33E2-4C2D-AC14-5C52DA8082C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE085D9D-33E2-4C2D-AC14-5C52DA8082C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE085D9D-33E2-4C2D-AC14-5C52DA8082C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE085D9D-33E2-4C2D-AC14-5C52DA8082C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

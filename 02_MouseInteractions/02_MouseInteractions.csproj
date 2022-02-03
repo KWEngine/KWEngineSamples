@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81803170-71AA-420E-B8B8-EE4771D4F232}</ProjectGuid>
+    <ProjectGuid>{CE42A7AD-7B31-4D00-B271-551F1BB6B362}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_04_LightsAndShadows</RootNamespace>
-    <AssemblyName>04_LightsAndShadows</AssemblyName>
+    <RootNamespace>_02_MouseInteractions</RootNamespace>
+    <AssemblyName>02_MouseInteractions</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>_04_LightsAndShadows.Program</StartupObject>
+    <StartupObject>_02_MouseInteractions.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AssimpNet">
@@ -62,14 +62,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CursorSphere.cs" />
     <Compile Include="Floor.cs" />
     <Compile Include="GameWindow.cs" />
     <Compile Include="GameWorld.cs" />
-    <Compile Include="Immovable.cs" />
+    <Compile Include="Obstacle.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sphere.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

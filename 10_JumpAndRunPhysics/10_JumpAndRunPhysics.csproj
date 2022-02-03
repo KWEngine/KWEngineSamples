@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81803170-71AA-420E-B8B8-EE4771D4F232}</ProjectGuid>
+    <ProjectGuid>{8ECC6103-8398-4339-9E47-402D3D86CE71}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_04_LightsAndShadows</RootNamespace>
-    <AssemblyName>04_LightsAndShadows</AssemblyName>
+    <RootNamespace>_10_JumpAndRunPhysics</RootNamespace>
+    <AssemblyName>10_JumpAndRunPhysics</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>_04_LightsAndShadows.Program</StartupObject>
+    <StartupObject>_10_JumpAndRunPhysics.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AssimpNet">
@@ -54,6 +54,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -65,11 +66,10 @@
     <Compile Include="Floor.cs" />
     <Compile Include="GameWindow.cs" />
     <Compile Include="GameWorld.cs" />
-    <Compile Include="Immovable.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="PlayerComplex.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sphere.cs" />
+    <Compile Include="Wall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
