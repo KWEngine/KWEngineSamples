@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32106.194
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_BasicMovement", "01_BasicMovement\01_BasicMovement.csproj", "{5BD9E533-047D-42B7-9A6A-A2D1E4477EAC}"
 EndProject
@@ -33,6 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "textures", "textures", "{E1
 		textures\scifi_tile_03_metallic.dds = textures\scifi_tile_03_metallic.dds
 		textures\scifi_tile_03_normal.dds = textures\scifi_tile_03_normal.dds
 		textures\scifi_tile_03_roughness.dds = textures\scifi_tile_03_roughness.dds
+		textures\skybox4.jpg = textures\skybox4.jpg
 		textures\spacebackground.dds = textures\spacebackground.dds
 		textures\tiles.jpg = textures\tiles.jpg
 		textures\tiles_normal.jpg = textures\tiles_normal.jpg
@@ -72,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_LightsAndShadows", "04_L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_CollisionDetection", "03_CollisionDetection\03_CollisionDetection.csproj", "{FE085D9D-33E2-4C2D-AC14-5C52DA8082C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_BackgroundTextures", "05_BackgroundTextures\05_BackgroundTextures.csproj", "{90393153-BC88-424F-98B7-18FD724068D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +101,10 @@ Global
 		{FE085D9D-33E2-4C2D-AC14-5C52DA8082C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE085D9D-33E2-4C2D-AC14-5C52DA8082C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE085D9D-33E2-4C2D-AC14-5C52DA8082C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90393153-BC88-424F-98B7-18FD724068D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90393153-BC88-424F-98B7-18FD724068D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90393153-BC88-424F-98B7-18FD724068D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90393153-BC88-424F-98B7-18FD724068D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
