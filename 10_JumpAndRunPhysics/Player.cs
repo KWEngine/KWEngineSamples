@@ -9,9 +9,7 @@ using System.Collections.Generic;
 
 namespace _10_JumpAndRunPhysics
 {
-    
-
-    class PlayerComplex : GameObject
+    class Player : GameObject
     {
         private enum JumpState
         {
@@ -47,11 +45,11 @@ namespace _10_JumpAndRunPhysics
 
                     if(IsLeftKeyPressed(ks))
                     {
-                        _velocity.X -= _walkSpeed;
+                        _velocity.X = -_walkSpeed;
                     }
                     if (IsRightKeyPressed(ks))
                     {
-                        _velocity.X += _walkSpeed;
+                        _velocity.X = _walkSpeed;
                     }
                 }
             }
@@ -62,13 +60,12 @@ namespace _10_JumpAndRunPhysics
 
             // if player is in jump or fall state, gravity is subtracted from its current velocity.
             // if velocity passes < 0, state switches from jump (upwards) to fall (downwards):
-            if (_currentState == JumpState.Jump)                                  
+            if (_currentState == JumpState.Jump)
             {
                 MoveOffset(_velocity);
                 _velocity = _velocity - GRAVITY * KWEngine.DeltaTimeFactor;
                 if (_velocity.Y <= 0)
                 {
-                    _velocity.Y = 0;
                     _currentState = JumpState.Fall;
                     stateJustSwitched = true;
                 }
@@ -86,6 +83,7 @@ namespace _10_JumpAndRunPhysics
                 // on the ground. If not, the player must have moved off of an
                 // edge.
                 MoveOffset(-GRAVITY / 10 * KWEngine.DeltaTimeFactor);
+                //MoveOffset(_velocity);
             }
 
             // Turns true, if the player had a collision with any object
@@ -101,10 +99,14 @@ namespace _10_JumpAndRunPhysics
                 // If the player has to be moved upwards in order
                 // to solve the collision, he must be standing on
                 // something. Switch yUpCorrection to true then:
-                if (i.MTV.Y > 0)
+                if (i.MTV.Y > 0 && i.MTV.Y > i.MTV.X && i.MTV.Y > i.MTV.Z)
                     yUpCorrection = true;
 
-                if(i.MTV.Y < 0 && _currentState == JumpState.Jump)
+                // If the player has to be corrected downwards and still is jumping up,
+                // he has hit his head somewhere. The jump state must then switch to
+                // the fall state:
+                // (Math.Round ensures that rounding errors don't interfere here)
+                if(Math.Round(i.MTV.Y,3) < 0 && _currentState == JumpState.Jump)
                 {
                     _velocity.Y = 0;
                     _currentState = JumpState.Fall;
@@ -115,9 +117,10 @@ namespace _10_JumpAndRunPhysics
                 // If the mtv tells the player to correct its position
                 // upwards, the player object must have hit the floor.
                 // Switch state to "stand" then:
-                if (i.MTV.Y > 0 && _currentState == JumpState.Fall)
+                if (yUpCorrection && _currentState == JumpState.Fall)
                 {
                     HelperAudio.SoundPlay(@".\sfx\jumpLand.ogg");
+                    stateJustSwitched = true;
                     _currentState = JumpState.Stand;                    
                     _velocity = Vector3.Zero;                               // reset velocity to 0 as well!
                     _animationTime = 0; 
@@ -129,6 +132,7 @@ namespace _10_JumpAndRunPhysics
             if (!yUpCorrection && _currentState == JumpState.Stand)
             {
                 _currentState = JumpState.Fall;
+                stateJustSwitched = true;
             }
 
             // Process the player model's animations:
@@ -146,11 +150,13 @@ namespace _10_JumpAndRunPhysics
                 {
                     SetRotation(0, -90, 0);
                     MoveOffset((-_walkSpeed) * KWEngine.DeltaTimeFactor, 0, 0);
+                    _velocity.X = -_walkSpeed * KWEngine.DeltaTimeFactor;
                 }
                 if (IsRightKeyPressed(ks))
                 {
                     SetRotation(0, 90, 0);
                     MoveOffset((_walkSpeed) * KWEngine.DeltaTimeFactor, 0, 0);
+                    _velocity.X = _walkSpeed * KWEngine.DeltaTimeFactor;
                 }
             }
             else
@@ -171,12 +177,12 @@ namespace _10_JumpAndRunPhysics
                 bool leftRight = false;
                 if (IsLeftKeyPressed(ks))
                 {
-                    _velocity.X = MathHelper.Clamp(_velocity.X - (_walkSpeed / 8) * KWEngine.DeltaTimeFactor, -_walkSpeed, _walkSpeed);
+                    _velocity.X = MathHelper.Clamp(_velocity.X - (_walkSpeed / 4) * KWEngine.DeltaTimeFactor, -_walkSpeed, _walkSpeed);
                     leftRight = true;
                 }
                 if (IsRightKeyPressed(ks))
                 {
-                    _velocity.X = MathHelper.Clamp(_velocity.X + (_walkSpeed / 8) * KWEngine.DeltaTimeFactor, -_walkSpeed, _walkSpeed);
+                    _velocity.X = MathHelper.Clamp(_velocity.X + (_walkSpeed / 4) * KWEngine.DeltaTimeFactor, -_walkSpeed, _walkSpeed);
                     leftRight = true;
                 }
 
@@ -216,6 +222,12 @@ namespace _10_JumpAndRunPhysics
 
         private void DoAnimation(KeyboardState ks, bool animationJustSwitched)
         {
+            if (animationJustSwitched)
+            {
+                Console.WriteLine("switched to: " + _currentState.ToString());
+                Console.WriteLine("velocity: " + _velocity);
+                Console.WriteLine("----------------------------------------");
+            }
             // If the player is on the floor...
             if(_currentState == JumpState.Stand)
             {
@@ -252,6 +264,10 @@ namespace _10_JumpAndRunPhysics
                 }
                 else
                 {
+                    if (animationJustSwitched)
+                    {
+                        _animationTime = 0;
+                    }
                     _animationTime = (_animationTime + 0.025f * KWEngine.DeltaTimeFactor) % 1f;
                     AnimationPercentage = _animationTime;
                 }

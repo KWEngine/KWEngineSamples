@@ -35,8 +35,9 @@ namespace _10_JumpAndRunPhysics
             KWEngine.LoadModelFromFile("ubot", @".\models\ubot.fbx");
             SetTextureBackground(@".\textures\spacebackground.dds", 2, 2);
 
-            //PlayerSimple p = new PlayerSimple();
-            PlayerComplex p = new PlayerComplex();
+            SetAmbientLight(1, 1, 1, 0.5f);
+
+            Player p = new Player();
             p.SetModel("ubot");
             p.SetRotation(0, 90, 0);
             p.IsCollisionObject = true;

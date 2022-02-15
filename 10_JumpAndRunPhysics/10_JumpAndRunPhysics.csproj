@@ -67,7 +67,7 @@
     <Compile Include="Floor.cs" />
     <Compile Include="GameWindow.cs" />
     <Compile Include="GameWorld.cs" />
-    <Compile Include="PlayerComplex.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wall.cs" />
