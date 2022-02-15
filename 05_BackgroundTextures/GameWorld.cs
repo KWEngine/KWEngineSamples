@@ -73,17 +73,23 @@ namespace _05_BackgroundTextures
             AddGameObject(p);
 
             // Place HUD objects:
-            _hMode = new HUDObject(HUDObjectType.Text, CurrentWindow.Width - 420, 32);
+            _hMode = new HUDObject(HUDObjectType.Text, CurrentWindow.Width - 640, 32);
             _hMode.Name = "HUDMode";
             _hMode.SetFont(FontFace.MajorMonoDisplay);
             _hMode.SetText("TEXTURE MODE: 2D");
             AddHUDObject(_hMode);
 
-            HUDObject hHint = new HUDObject(HUDObjectType.Text, CurrentWindow.Width - 420, 72);
+            HUDObject hHint = new HUDObject(HUDObjectType.Text, CurrentWindow.Width - 640, 72);
             hHint.Name = "HUDHint";
             hHint.SetFont(FontFace.MajorMonoDisplay);
-            hHint.SetText("(press SPACE)");
+            hHint.SetText("(press SPACE to change)");
             AddHUDObject(hHint);
+
+            HUDObject hHint2 = new HUDObject(HUDObjectType.Text, CurrentWindow.Width - 640, 140);
+            hHint2.Name = "HUDHint2";
+            hHint2.SetFont(FontFace.MajorMonoDisplay);
+            hHint2.SetText("[move camera with mouse]");
+            AddHUDObject(hHint2);
 
             CurrentWindow.CursorGrabbed = true;
             CurrentWindow.CursorVisible = false;
