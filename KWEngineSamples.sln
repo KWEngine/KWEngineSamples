@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{0115A3D2-E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "textures", "textures", "{E1410BE1-8D1F-4895-9D7F-75607B1387F1}"
 	ProjectSection(SolutionItems) = preProject
+		textures\heightmap.png = textures\heightmap.png
+		textures\mud_albedo.dds = textures\mud_albedo.dds
+		textures\mud_normal.dds = textures\mud_normal.dds
+		textures\mud_roughness.dds = textures\mud_roughness.dds
 		textures\pavement_06_albedo.dds = textures\pavement_06_albedo.dds
 		textures\pavement_06_normal.dds = textures\pavement_06_normal.dds
 		textures\pavement_06_roughness.dds = textures\pavement_06_roughness.dds
@@ -75,6 +79,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_CollisionDetection", "03
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_BackgroundTextures", "05_BackgroundTextures\05_BackgroundTextures.csproj", "{90393153-BC88-424F-98B7-18FD724068D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Terrain", "06_Terrain\06_Terrain.csproj", "{3DA1B8F5-E32F-48CE-B3BB-0AE433ED494B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +111,10 @@ Global
 		{90393153-BC88-424F-98B7-18FD724068D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90393153-BC88-424F-98B7-18FD724068D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90393153-BC88-424F-98B7-18FD724068D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA1B8F5-E32F-48CE-B3BB-0AE433ED494B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA1B8F5-E32F-48CE-B3BB-0AE433ED494B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA1B8F5-E32F-48CE-B3BB-0AE433ED494B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA1B8F5-E32F-48CE-B3BB-0AE433ED494B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
