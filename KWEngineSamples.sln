@@ -22,6 +22,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "textures", "textures", "{E1410BE1-8D1F-4895-9D7F-75607B1387F1}"
 	ProjectSection(SolutionItems) = preProject
 		textures\heightmap.png = textures\heightmap.png
+		textures\iron_panel_albedo.dds = textures\iron_panel_albedo.dds
+		textures\iron_panel_metal.dds = textures\iron_panel_metal.dds
+		textures\iron_panel_normal.dds = textures\iron_panel_normal.dds
+		textures\iron_panel_roughness.dds = textures\iron_panel_roughness.dds
 		textures\mud_albedo.dds = textures\mud_albedo.dds
 		textures\mud_normal.dds = textures\mud_normal.dds
 		textures\mud_roughness.dds = textures\mud_roughness.dds

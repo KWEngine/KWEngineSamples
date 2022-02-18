@@ -86,12 +86,16 @@ namespace _04_LightsAndShadows
 
             Immovable i01 = new Immovable();
             i01.SetModel("KWSphere");
+            i01.SetTexture(@".\textures\iron_panel_albedo.dds", TextureType.Albedo);
+            i01.SetTexture(@".\textures\iron_panel_normal.dds", TextureType.Normal);
+            i01.SetTexture(@".\textures\iron_panel_roughness.dds", TextureType.Roughness);
+            i01.SetTexture(@".\textures\iron_panel_metal.dds", TextureType.Metalness);
             i01.SetPosition(5, 2.5f, 5);
             i01.SetScale(5);
             i01.IsShadowCaster = true;                                                              // does the object cast and receive shadows? (default: false)
             AddGameObject(i01);
 
-            Immovable i02 = new Immovable();
+            Player i02 = new Player();
             i02.SetModel("Nightshade");
             i02.SetPosition(-2.5f, 0, -1.25f);
             i02.SetScale(2f);

@@ -14,9 +14,17 @@ namespace _04_LightsAndShadows
 {
     class Player : GameObject
     {
+        private float _animationPercentage = 0;
+        private int _animationId = 0;
+
         public override void Act(KeyboardState ks, MouseState ms)
         {
-            
+            if (HasAnimations)
+            {
+                AnimationID = _animationId;
+                _animationPercentage = (_animationPercentage + 0.001f * KWEngine.DeltaTimeFactor) % 1f;
+                AnimationPercentage = _animationPercentage;
+            }
         }
     }
 }
