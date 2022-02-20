@@ -53,6 +53,8 @@ namespace _03_CollisionDetection
                 // If this loop is running, there must be at least one collision!
                 // So, set the HUDObject instance to display its name:
                 h1.SetText("Collider: " + i.Object.Name);
+                Vector3 color = i.Object.Color;
+                i.Object.SetGlow(color.X, color.Y, color.Z, 1);
 
                 // Undo the current collision by moving as advised by the MTV
                 // (minimum-translation-vector):

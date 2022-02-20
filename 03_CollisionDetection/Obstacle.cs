@@ -12,7 +12,7 @@ namespace _03_CollisionDetection
     {
         public override void Act(KeyboardState ks, MouseState ms)
         {
-            
+            this.SetGlow(0, 0, 0, 0);
         }
     }
 }

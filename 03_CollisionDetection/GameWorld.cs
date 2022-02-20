@@ -39,6 +39,7 @@ namespace _03_CollisionDetection
             p.SetModel("spaceship4");
             p.SetRotation(-90, 180, 0); // rotate the object so that it faces upwards
             p.IsCollisionObject = true;
+            p.UpdateLast = true;
             AddGameObject(p);
 
             // Place some obstacles:
