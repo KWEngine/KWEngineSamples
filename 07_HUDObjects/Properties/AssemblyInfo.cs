@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("03_CollisionDetection")]
+[assembly: AssemblyTitle("_07_HUDObjects")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("03_CollisionDetection")]
+[assembly: AssemblyProduct("07_HUDObjects")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Die folgende GUID bestimmt die ID der Typbibliothek, wenn dieses Projekt für COM verfügbar gemacht wird
-[assembly: Guid("fe085d9d-33e2-4c2d-ac14-5c52da8082c7")]
+[assembly: Guid("7c0b4920-f80c-4576-a55c-ef6facbef2f6")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
