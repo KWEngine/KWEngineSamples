@@ -71,22 +71,29 @@ namespace _07_HUDObjects
 
             // Place HUD object:
             HUDObject hPosition = new HUDObject(
-                HUDObjectType.Text,         // HUD object type (text or image)
-                CurrentWindow.Width - 640,  // HUD object start position (margin left)
-                32                          // HUD object start position (margin top)
+                HUDObjectType.Text,                         // HUD object type (text or image)
+                CurrentWindow.Width - 640,                  // HUD object start position (margin left)
+                32                                          // HUD object start position (margin top)
                 );
             hPosition.Name = "PlayerPosition";              // HUD object name (needed to find it later!)
             hPosition.CharacterSpreadFactor = 22;           // set width of each letter
             hPosition.SetFont(FontFace.MajorMonoDisplay);   // set font
             AddHUDObject(hPosition);                        // add HUD object to world
 
-            // You can also images as HUD objects:
-            /*
-             * HUDObject hImage = new HUDObject(HUDObjectType.Image, 32, 32);
-             * hImage.SetTexture(@".\textures\tiles.jpg");
-             * hImage.SetScale(64, 64);
-             * AddHUDObject(hImage);
-             */
+            HUDObject hHealthImage = new HUDObject(HUDObjectType.Image, 32, CurrentWindow.Height - 32);
+            hHealthImage.SetTexture(@".\textures\iconHealth.dds");
+            hHealthImage.SetScale(64, 64);
+            AddHUDObject(hHealthImage);
+
+            HUDObject hHealthValue = new HUDObject(
+                HUDObjectType.Text,                             // HUD object type (text or image)
+                72,                                             // HUD object start position
+                CurrentWindow.Height - 32                       // HUD object start position (margin-bottom in this case)
+                );
+            hHealthValue.SetText("100%");                       // Set HUD Text
+            hHealthValue.CharacterSpreadFactor = 22;            // set width of each letter
+            hHealthValue.SetFont(FontFace.MajorMonoDisplay);    // set font
+            AddHUDObject(hHealthValue);
         }
     }
 }
