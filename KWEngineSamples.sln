@@ -90,6 +90,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_HUDObjects", "07_HUDObje
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_FirstPersonPerspective", "08_FirstPersonPerspective\08_FirstPersonPerspective.csproj", "{CD1D1B2C-AB8F-4E2E-A3AE-794AEFD36910}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Particles", "09_Particles\09_Particles.csproj", "{48F970C3-D628-4B81-BB58-DAB9E127A789}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -132,6 +134,10 @@ Global
 		{CD1D1B2C-AB8F-4E2E-A3AE-794AEFD36910}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD1D1B2C-AB8F-4E2E-A3AE-794AEFD36910}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD1D1B2C-AB8F-4E2E-A3AE-794AEFD36910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F970C3-D628-4B81-BB58-DAB9E127A789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F970C3-D628-4B81-BB58-DAB9E127A789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F970C3-D628-4B81-BB58-DAB9E127A789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F970C3-D628-4B81-BB58-DAB9E127A789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
