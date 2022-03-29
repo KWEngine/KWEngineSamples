@@ -647,7 +647,7 @@
             Ändert die Nah- und Ferngrenze des Lichts
             </summary>
             <param name="zNear">Nahgrenze (Standard: 1 (für Sonnen 10), muss größer als 0 und kleiner als die Ferngrenze sein)</param>
-            <param name="zFar">Ferngrenze [Bereich: 1.5 bis 10000 (Standard: 10, für Sonnen 1000)]</param>
+            <param name="zFar">Ferngrenze [Bereich: 1.5 bis 100000 (Standard: 10, für Sonnen 1000)]</param>
         </member>
         <member name="M:KWEngine2.GameObjects.LightObject.SetColor(System.Single,System.Single,System.Single,System.Single)">
             <summary>
@@ -690,14 +690,14 @@
             <summary>
             Setzt das Field of View (in Grad) für das schattenwerfende Licht
             </summary>
-            <param name="fov">Blickfeld nach links und rechts in Grad (Minimum: 10, Maximum: 180)</param>
+            <param name="fov">Blickfeld nach links und rechts in Grad [Minimum: 10, Maximum: 180 (für Sonnen mehr)]</param>
         </member>
         <member name="M:KWEngine2.GameObjects.LightObject.SetFOVBiasCoefficient(System.Single,System.Single)">
             <summary>
             Setzt den Koeffizienten für die Berechnung der Schattenposition der LightObject-Instanz
             </summary>
-            <param name="bias">Biaswert (Standard: 0.00005 für gerichtete Lichter; Bereich: -1 bis 1)</param>
-            <param name="hardness">Steuert die Schattenhärte. Je kleiner der Wert, desto härter der Schattenverlauf (Standard: 0.98f; Bereich: 0.01f bis 2f)</param>
+            <param name="momentBias">Biaswert (Standard: 0.00003 für gerichtete Lichter, 0.0025 für Punktlichter; Bereich: 0 bis 1)</param>
+            <param name="depthBias">Steuert die Schattenpositionsverschiebung (Standard: 0f; Bereich: -1f bis +1f)</param>
         </member>
         <member name="M:KWEngine2.GameObjects.LightObject.CompareTo(System.Object)">
             <summary>
