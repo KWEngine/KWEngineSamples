@@ -115,7 +115,7 @@ namespace _10_JumpAndRunPhysics
             _light = new LightObject(LightType.Directional, true);
             _light.SetColor(0.25f, 1f, 0.25f, 4);
             _light.SetPosition(0, 5, 10);
-            _light.SetNearAndFarBounds(5, 50);
+            _light.SetNearAndFarBounds(1, 50);
             _light.SetTarget(0, -2.5f, 0);
             AddLightObject(_light);
 
@@ -124,7 +124,7 @@ namespace _10_JumpAndRunPhysics
             sun.SetPosition(25, 25, 25);
             sun.SetTarget(0, 0, 0);
             sun.SetFOV(15);
-            sun.SetNearAndFarBounds(20, 50);
+            sun.SetNearAndFarBounds(10, 100);
             AddLightObject(sun);
         }
     }

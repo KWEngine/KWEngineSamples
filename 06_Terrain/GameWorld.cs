@@ -47,7 +47,6 @@ namespace _06_Terrain
             sun.SetPosition(50, 25, 0);
             sun.SetNearAndFarBounds(20, 100);
             sun.SetColor(1, 9f, 0.8f, 4);
-            sun.SetFOVBiasCoefficient(0.000005f, 0.50f);
             AddLightObject(sun);
 
             // Add GameObject instance with previously built terrain model:

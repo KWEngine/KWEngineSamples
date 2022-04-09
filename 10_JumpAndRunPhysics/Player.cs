@@ -222,12 +222,6 @@ namespace _10_JumpAndRunPhysics
 
         private void DoAnimation(KeyboardState ks, bool animationJustSwitched)
         {
-            if (animationJustSwitched)
-            {
-                Console.WriteLine("switched to: " + _currentState.ToString());
-                Console.WriteLine("velocity: " + _velocity);
-                Console.WriteLine("----------------------------------------");
-            }
             // If the player is on the floor...
             if(_currentState == JumpState.Stand)
             {
@@ -236,7 +230,7 @@ namespace _10_JumpAndRunPhysics
                 {
                     // switch to walk animation id:
                     AnimationID = 2;
-                    _animationTime = (_animationTime + 0.025f * KWEngine.DeltaTimeFactor) % 1f;
+                    _animationTime = (_animationTime + 0.04f * KWEngine.DeltaTimeFactor) % 1f;
                     AnimationPercentage = _animationTime;
                 }
                 else

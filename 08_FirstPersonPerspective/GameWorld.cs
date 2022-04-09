@@ -21,6 +21,8 @@ namespace _08_FirstPersonPerspective
 
         public override void Prepare()
         {
+            FOV = 90;
+
             // Set background texture:
             SetTextureSkybox(@".\textures\skybox4.jpg");
 
