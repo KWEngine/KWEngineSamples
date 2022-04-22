@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{0115A3D2-E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "textures", "textures", "{E1410BE1-8D1F-4895-9D7F-75607B1387F1}"
 	ProjectSection(SolutionItems) = preProject
+		textures\crosshair.png = textures\crosshair.png
 		textures\heightmap.png = textures\heightmap.png
 		textures\iconHealth.dds = textures\iconHealth.dds
 		textures\iron_panel_albedo.dds = textures\iron_panel_albedo.dds
@@ -92,6 +93,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_FirstPersonPerspective",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_Particles", "09_Particles\09_Particles.csproj", "{48F970C3-D628-4B81-BB58-DAB9E127A789}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_ThirdPersonPerspective", "11_ThirdPersonPerspective\11_ThirdPersonPerspective.csproj", "{9AAE9C89-5741-4B6A-B8B1-6FBB250CB2AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -138,6 +141,10 @@ Global
 		{48F970C3-D628-4B81-BB58-DAB9E127A789}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48F970C3-D628-4B81-BB58-DAB9E127A789}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48F970C3-D628-4B81-BB58-DAB9E127A789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AAE9C89-5741-4B6A-B8B1-6FBB250CB2AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AAE9C89-5741-4B6A-B8B1-6FBB250CB2AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AAE9C89-5741-4B6A-B8B1-6FBB250CB2AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AAE9C89-5741-4B6A-B8B1-6FBB250CB2AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
