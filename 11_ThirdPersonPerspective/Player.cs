@@ -113,7 +113,8 @@ namespace _11_ThirdPersonPerspective
                 // If mouse cursor hovers over Immovable objects, then color it red:
                 if(crosshair != null)
                 {
-                    crosshair.SetColor(1, 0, 0, 5);
+                    crosshair.SetColor(1, 0, 0, 1);
+                    crosshair.SetGlow(1, 0, 0, 1);
                 }
 
                 // If player is pressing the left shift key or the left mouse button, generate a shot object:
@@ -125,6 +126,7 @@ namespace _11_ThirdPersonPerspective
             else
             {
                 crosshair.SetColor(1, 1, 1, 1);
+                crosshair.SetGlow(0, 0, 0, 0);
             }
             
 

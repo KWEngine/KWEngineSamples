@@ -19,7 +19,7 @@ namespace _11_ThirdPersonPerspective
             Intersection i = GetIntersection();
             if (i != null)
             {
-                Explosion ex = new Explosion(this.Position + GetLookAtVector() * (-currentSpeed * 0.5f), 8, 0.25f, 0.5f, 2f, ExplosionType.Cube, new Vector4(0, 0.25f, 1f, 1));
+                Explosion ex = new Explosion(this.Position + GetLookAtVector() * (-currentSpeed * 0.5f), 8, 0.25f, 0.5f, 2f, ExplosionType.SphereRingY, new Vector4(0, 0.25f, 1f, 1));
                 CurrentWorld.AddGameObject(ex);
                 CurrentWorld.RemoveGameObject(this);
             }

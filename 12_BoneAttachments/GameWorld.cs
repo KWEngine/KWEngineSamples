@@ -35,7 +35,9 @@ namespace _12_BoneAttachments
             sun.SetTarget(0, 0, 0);
             sun.SetColor(1, 1, 1, 3);
             sun.SetNearAndFarBounds(5, 100);
+            sun.SetFOV(15);
             AddLightObject(sun);
+            //DebugShadowLight = sun;
 
             // Load 3D models:
             KWEngine.LoadModelFromFile("Ortiz", @".\models\ortiz.fbx");

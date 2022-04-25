@@ -137,7 +137,6 @@ namespace _12_BoneAttachments
 
         private void DoAnimation(bool justSwitched = false)
         {
-            Console.WriteLine(_movementType);
             if(_movementType == MovementType.Idle)
             {
                 AnimationID = 0;
@@ -156,12 +155,9 @@ namespace _12_BoneAttachments
                 if (justSwitched)
                 {
                     _animPercent = 0;
-                    Console.WriteLine("reset percent");
                 }
                 
                 _animPercent = _animPercent + 0.05f * KWEngine.DeltaTimeFactor;
-                
-                Console.WriteLine(_animPercent);
                 if (_animPercent >= 1)
                 {
                     _movementType = MovementType.Idle;
