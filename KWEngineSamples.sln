@@ -64,6 +64,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "models", "models", "{F74A8B
 		models\spaceship4.jpg = models\spaceship4.jpg
 		models\spaceship4.mtl = models\spaceship4.mtl
 		models\spaceship4.obj = models\spaceship4.obj
+		models\sword.glb = models\sword.glb
 		models\ubot.fbx = models\ubot.fbx
 		models\ubot_diffuse.png = models\ubot_diffuse.png
 		models\ubot_specular.png = models\ubot_specular.png
