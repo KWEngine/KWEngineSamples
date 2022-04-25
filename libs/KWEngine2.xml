@@ -647,7 +647,7 @@
             Ändert die Nah- und Ferngrenze des Lichts
             </summary>
             <param name="zNear">Nahgrenze (Standard: 1 (für Sonnen 10), muss größer als 0 und kleiner als die Ferngrenze sein)</param>
-            <param name="zFar">Ferngrenze [Bereich: 1.5 bis 10000 (Standard: 10, für Sonnen 10000)]</param>
+            <param name="zFar">Ferngrenze [Bereich: 1.5 bis 100000 (Standard: 10, für Sonnen 1000)]</param>
         </member>
         <member name="M:KWEngine2.GameObjects.LightObject.SetColor(System.Single,System.Single,System.Single,System.Single)">
             <summary>
@@ -696,7 +696,7 @@
             <summary>
             Setzt den Koeffizienten für die Berechnung der Schattenposition der LightObject-Instanz
             </summary>
-            <param name="momentBias">Biaswert (Standard: 0.00003 für gerichtete Lichter; Bereich: 0 bis 1)</param>
+            <param name="momentBias">Biaswert (Standard: 0.00003 für gerichtete Lichter, 0.0025 für Punktlichter; Bereich: 0 bis 1)</param>
             <param name="depthBias">Steuert die Schattenpositionsverschiebung (Standard: 0f; Bereich: -1f bis +1f)</param>
         </member>
         <member name="M:KWEngine2.GameObjects.LightObject.CompareTo(System.Object)">
@@ -964,6 +964,43 @@
             <summary>
             Optionales Speicherfeld
             </summary>
+        </member>
+        <member name="P:KWEngine2.GameObjects.GameObject.HasAttachedGameObjects">
+            <summary>
+            Liefert true, wenn mind. eine GameObject-Instanz an einen Knochen des aufrufenden Objekts gebunden ist
+            </summary>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetBoneNamesForAttachedGameObject">
+            <summary>
+            Liefert eine Liste der Knochennamen, an die aktuell eine andere GameObject-Instanz gebunden ist
+            </summary>
+            <returns>Liste der verwendeten Knochennamen (für Attachments)</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetGameObjectThatIAmAttachedTo">
+            <summary>
+            Liefert die Referenz auf das Objekt, an das die aktuelle Instanz gebunden ist
+            </summary>
+            <returns>GameObject, an das die Instanz (via Knochen) gebunden ist</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.GetAttachedGameObjectForBone(System.String)">
+            <summary>
+            Liefert die an einen Knochen gebundene GameObject-Instanz
+            </summary>
+            <param name="boneName">Knochenname</param>
+            <returns>Gebundene GameObject-Instanz</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.AttachGameObjectToBone(KWEngine2.GameObjects.GameObject,System.String)">
+            <summary>
+            Bindet eine andere GameObject-Instanz an den jeweiligen Knochen des aktuell verwendeten Modells
+            </summary>
+            <param name="g">Anzuhängende Instanz</param>
+            <param name="boneName">Name des Knochens, an den die Instanz angehängt werden soll</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.DetachGameObjectFromBone(System.String)">
+            <summary>
+            Entfernt die Bindung (Attachment) einer GameObject-Instanz 
+            </summary>
+            <param name="boneName"></param>
         </member>
         <member name="P:KWEngine2.GameObjects.GameObject.Rotation">
             <summary>
@@ -2258,6 +2295,13 @@
             <param name="name">Name des Modells</param>
             <param name="filename">Datei des Modells</param>
             <param name="callerName"></param>
+        </member>
+        <member name="M:KWEngine2.KWEngine.GetModelBoneNames(System.String)">
+            <summary>
+            Erstellt eine Liste der im 3D-Modell verfügbaren Knochennamen
+            </summary>
+            <param name="modelname">Name des Modells (muss zuvor importiert worden sein)</param>
+            <returns>Liste der Knochennamen</returns>
         </member>
         <member name="T:KWEngine2.GLWindow">
             <summary>
