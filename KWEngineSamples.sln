@@ -45,9 +45,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "textures", "textures", "{E1
 		textures\scifi_tile_03_roughness.dds = textures\scifi_tile_03_roughness.dds
 		textures\skybox4.jpg = textures\skybox4.jpg
 		textures\spacebackground.dds = textures\spacebackground.dds
+		textures\spritesheet.png = textures\spritesheet.png
 		textures\tiles.jpg = textures\tiles.jpg
 		textures\tiles_normal.jpg = textures\tiles_normal.jpg
 		textures\tiles_roughness.png = textures\tiles_roughness.png
+		white.bmp = white.bmp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "models", "models", "{F74A8B11-BEEC-4D99-AA1A-0A7C481F78C8}"
@@ -97,6 +99,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11_ThirdPersonPerspective", "11_ThirdPersonPerspective\11_ThirdPersonPerspective.csproj", "{9AAE9C89-5741-4B6A-B8B1-6FBB250CB2AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12_BoneAttachments", "12_BoneAttachments\12_BoneAttachments.csproj", "{45122450-5848-4BC3-96F8-7F3665BC699E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13_2DSpritesheets", "13_2DSpritesheets\13_2DSpritesheets.csproj", "{5B30B865-DDA9-4B3F-B447-E573519DE4F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,6 +156,10 @@ Global
 		{45122450-5848-4BC3-96F8-7F3665BC699E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45122450-5848-4BC3-96F8-7F3665BC699E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45122450-5848-4BC3-96F8-7F3665BC699E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B30B865-DDA9-4B3F-B447-E573519DE4F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B30B865-DDA9-4B3F-B447-E573519DE4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B30B865-DDA9-4B3F-B447-E573519DE4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B30B865-DDA9-4B3F-B447-E573519DE4F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1334,6 +1334,13 @@
             <param name="meshIndex">ID des Meshs im Model</param>
             <param name="type">Art der Textur</param>
         </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetTextureOffset(System.Single,System.Single)">
+            <summary>
+            Verschiebt den Anfang der Textur in die entsprechende Richtung (in Pixeln der Originaltextur)
+            </summary>
+            <param name="x">x-Verschiebung</param>
+            <param name="y">y-Verschiebung</param>
+        </member>
         <member name="M:KWEngine2.GameObjects.GameObject.SetTextureRepeat(System.Single,System.Single,KWEngine2.CubeSide)">
             <summary>
             Setzt die Texturwiederholungen für das Objekt
@@ -1462,6 +1469,20 @@
             Zusammenfassung dieser Instanz
             </summary>
             <returns>String mit Instanzdetails</returns>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetHitboxScale(System.Single,System.Single,System.Single)">
+            <summary>
+            Ändert die Skalierung der Hitbox (alle Werte müssen >= 0.00001 sein)
+            </summary>
+            <param name="x">Skalierung auf der x-Achse</param>
+            <param name="y">Skalierung auf der y-Achse</param>
+            <param name="z">Skalierung auf der z-Achse</param>
+        </member>
+        <member name="M:KWEngine2.GameObjects.GameObject.SetHitboxScale(System.Single)">
+            <summary>
+            Ändert die Skalierung der Hitbox
+            </summary>
+            <param name="s">Skalierungswert (muss positiv sein)</param>
         </member>
         <member name="T:KWEngine2.Helper.HelperAudio">
             <summary>
